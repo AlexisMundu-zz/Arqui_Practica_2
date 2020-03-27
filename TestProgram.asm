@@ -1,4 +1,3 @@
-	
 	.text
 	# Initializations
 	addi $t0,$zero,2

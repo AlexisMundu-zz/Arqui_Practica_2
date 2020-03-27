@@ -18,12 +18,12 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 19:28:18  March 25, 2020
+# Date created = 00:50:06  March 27, 2020
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "18.1"
-DATE = "19:28:18  March 25, 2020"
+DATE = "00:50:06  March 27, 2020"
 
 # Revisions
 
