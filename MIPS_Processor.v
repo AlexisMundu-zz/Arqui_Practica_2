@@ -78,7 +78,7 @@ ProgramCounter
 (
 	.clk(clk),
 	.reset(reset),
-	.NewPC(MUX_PC_wire),
+	.NewPC(PC_4_wire),
 	.PCValue(PC_wire)
 );
 
