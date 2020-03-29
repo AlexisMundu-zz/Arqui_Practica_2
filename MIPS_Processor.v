@@ -24,7 +24,7 @@ module MIPS_Processor
 );
 //******************************************************************/
 //******************************************************************/
-assign  PortOut = 0;
+
 
 //******************************************************************/
 //******************************************************************/
@@ -32,6 +32,9 @@ assign  PortOut = 0;
 wire BranchNE_wire;
 wire BranchEQ_wire;
 wire RegDst_wire;
+wire MemRead_wire;
+wire MemtoReg_wire;
+wire MemWrite_wire;
 wire NotZeroANDBrachNE;
 wire ZeroANDBrachEQ;
 wire ORForBranch;
@@ -52,6 +55,7 @@ wire [31:0] ALUResult_wire;
 wire [31:0] PC_4_wire;
 wire [31:0] InmmediateExtendAnded_wire;
 wire [31:0] PCtoBranch_wire;
+wire [31:0] MemoryOrAlu_wire;
 integer ALUStatus;
 
 
@@ -67,6 +71,9 @@ ControlUnit
 	.RegDst(RegDst_wire),
 	.BranchNE(BranchNE_wire),
 	.BranchEQ(BranchEQ_wire),
+	.MemRead(MemRead_wire),
+	.MemtoReg(MemtoReg_wire),
+	.MemWrite(MemWrite_wire),
 	.ALUOp(ALUOp_wire),
 	.ALUSrc(ALUSrc_wire),
 	.RegWrite(RegWrite_wire)
@@ -134,7 +141,7 @@ Register_File
 	.WriteRegister(WriteRegister_wire),
 	.ReadRegister1(Instruction_wire[25:21]),
 	.ReadRegister2(Instruction_wire[20:16]),
-	.WriteData(ALUResult_wire),
+	.WriteData(MemoryOrAlu_wire),
 	.ReadData1(ReadData1_wire),
 	.ReadData2(ReadData2_wire)
 
@@ -187,6 +194,33 @@ Arithmetic_Logic_Unit
 
 assign ALUResultOut = ALUResult_wire;
 
+DataMemory
+Memory
+(
+	.WriteData(ReadData2_wire),
+	.Address(ALUResult_wire),
+	.MemWrite(MemWrite_wire),
+	.MemRead(MemRead_wire), 
+	.clk(clk),
+	.ReadData(Memory_wire)
+);
+
+
+Multiplexer2to1
+#(
+	.NBits(32)
+)
+MUX_MemoryOrAlu
+(
+	.Selector(MemtoReg_wire),
+	.MUX_Data0(ALUResult_wire),
+	.MUX_Data1(Memory_wire),
+	
+	.MUX_Output(MemoryOrAlu_wire)
+
+);
+
+assign  PortOut = MemoryOrAlu_wire;
 
 endmodule
 
