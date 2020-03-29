@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_Processor
-Sun Mar 29 00:35:25 2020
+Sun Mar 29 01:19:12 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -62,11 +62,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  54. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_MemoryOrAlu
  55. Parameter Settings for User Entity Instance: Adder32bits:PC_4_Plus_ShitLeft2_SignExtend
  56. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ
- 57. Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"
- 58. Port Connectivity Checks: "DataMemory:Memory"
- 59. Port Connectivity Checks: "RegisterFile:Register_File|Register:Register_Zero"
- 60. Port Connectivity Checks: "Adder32bits:PC_Plus_4"
- 61. Port Connectivity Checks: "Control:ControlUnit"
+ 57. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BNE
+ 58. Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"
+ 59. Port Connectivity Checks: "DataMemory:Memory"
+ 60. Port Connectivity Checks: "RegisterFile:Register_File|Register:Register_Zero"
+ 61. Port Connectivity Checks: "Adder32bits:PC_Plus_4"
  62. Post-Synthesis Netlist Statistics for Top Partition
  63. Elapsed Time Per Partition
  64. Analysis & Synthesis Messages
@@ -95,13 +95,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Mar 29 00:35:25 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Mar 29 01:19:12 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; MIPS_Processor                              ;
 ; Top-level Entity Name           ; MIPS_Processor                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 421                                         ;
+; Total registers                 ; 357                                         ;
 ; Total pins                      ; 74                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -215,7 +215,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -245,31 +245,31 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 450       ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 609       ;
-;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 217       ;
-;     -- 5 input functions                    ; 214       ;
-;     -- 4 input functions                    ; 81        ;
-;     -- <=3 input functions                  ; 96        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 421       ;
-;                                             ;           ;
-; I/O pins                                    ; 74        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 421       ;
-; Total fan-out                               ; 4840      ;
-; Average fan-out                             ; 4.11      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 523                              ;
+;                                             ;                                  ;
+; Combinational ALUT usage for logic          ; 546                              ;
+;     -- 7 input functions                    ; 3                                ;
+;     -- 6 input functions                    ; 177                              ;
+;     -- 5 input functions                    ; 176                              ;
+;     -- 4 input functions                    ; 96                               ;
+;     -- <=3 input functions                  ; 94                               ;
+;                                             ;                                  ;
+; Dedicated logic registers                   ; 357                              ;
+;                                             ;                                  ;
+; I/O pins                                    ; 74                               ;
+;                                             ;                                  ;
+; Total DSP Blocks                            ; 0                                ;
+;                                             ;                                  ;
+; Maximum fan-out node                        ; ALU:Arithmetic_Logic_Unit|Mux1~0 ;
+; Maximum fan-out                             ; 395                              ;
+; Total fan-out                               ; 4922                             ;
+; Average fan-out                             ; 4.68                             ;
++---------------------------------------------+----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -277,17 +277,20 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name         ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
-; |MIPS_Processor                                  ; 609 (17)            ; 421 (0)                   ; 0                 ; 0          ; 74   ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor      ; work         ;
-;    |ALU:Arithmetic_Logic_Unit|                   ; 102 (102)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit                               ; ALU                 ; work         ;
-;    |ALUControl:ArithmeticLogicUnitControl|       ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALUControl:ArithmeticLogicUnitControl                   ; ALUControl          ; work         ;
+; |MIPS_Processor                                  ; 546 (0)             ; 357 (0)                   ; 0                 ; 0          ; 74   ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor      ; work         ;
+;    |ALU:Arithmetic_Logic_Unit|                   ; 115 (115)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit                               ; ALU                 ; work         ;
+;    |ALUControl:ArithmeticLogicUnitControl|       ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALUControl:ArithmeticLogicUnitControl                   ; ALUControl          ; work         ;
 ;    |Adder32bits:PC_4_Plus_ShitLeft2_SignExtend|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_4_Plus_ShitLeft2_SignExtend              ; Adder32bits         ; work         ;
 ;    |Adder32bits:PC_Plus_4|                       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_Plus_4                                   ; Adder32bits         ; work         ;
-;    |Multiplexer2to1:MUX_ForReadDataAndInmediate| ; 236 (236)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate             ; Multiplexer2to1     ; work         ;
+;    |Control:ControlUnit|                         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Control:ControlUnit                                     ; Control             ; work         ;
+;    |Multiplexer2to1:MUX_ForReadDataAndInmediate| ; 197 (197)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate             ; Multiplexer2to1     ; work         ;
+;    |Multiplexer2to1:MUX_PC_4_OR_BNE|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_PC_4_OR_BNE                         ; Multiplexer2to1     ; work         ;
 ;    |PC_Register:ProgramCounter|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|PC_Register:ProgramCounter                              ; PC_Register         ; work         ;
-;    |ProgramMemory:ROMProgramMemory|              ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory       ; work         ;
-;    |RegisterFile:Register_File|                  ; 217 (0)             ; 416 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File                              ; RegisterFile        ; work         ;
-;       |DecoderRegisterFile:Decoder|              ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|DecoderRegisterFile:Decoder  ; DecoderRegisterFile ; work         ;
-;       |MUXRegisterFile:MUXRegister1|             ; 212 (212)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1 ; MUXRegisterFile     ; work         ;
+;    |ProgramMemory:ROMProgramMemory|              ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory       ; work         ;
+;    |RegisterFile:Register_File|                  ; 179 (0)             ; 352 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File                              ; RegisterFile        ; work         ;
+;       |DecoderRegisterFile:Decoder|              ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|DecoderRegisterFile:Decoder  ; DecoderRegisterFile ; work         ;
+;       |MUXRegisterFile:MUXRegister1|             ; 166 (166)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1 ; MUXRegisterFile     ; work         ;
+;       |MUXRegisterFile:MUXRegister2|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister2 ; MUXRegisterFile     ; work         ;
 ;       |Register:Register_at|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_at         ; Register            ; work         ;
 ;       |Register:Register_s0|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s0         ; Register            ; work         ;
 ;       |Register:Register_s1|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s1         ; Register            ; work         ;
@@ -299,8 +302,6 @@ refer to the applicable agreement for further details.
 ;       |Register:Register_t3|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t3         ; Register            ; work         ;
 ;       |Register:Register_t4|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t4         ; Register            ; work         ;
 ;       |Register:Register_t5|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t5         ; Register            ; work         ;
-;       |Register:Register_t6|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t6         ; Register            ; work         ;
-;       |Register:Register_t8|                     ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t8         ; Register            ; work         ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -315,6 +316,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; PC_Register:ProgramCounter|PCValue[0]                               ; Stuck at GND due to stuck port data_in            ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t7|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -324,6 +326,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -333,15 +336,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[0]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -351,15 +356,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[1]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -369,15 +376,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[2]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -387,15 +396,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[3]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -405,15 +416,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[4]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -423,15 +436,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[5]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -441,15 +456,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[6]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -459,15 +476,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[7]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -477,15 +496,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[8]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
@@ -495,15 +516,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[9]       ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -513,15 +536,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[10]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -531,15 +556,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[11]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -549,15 +576,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[12]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -567,15 +596,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[13]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -585,15 +616,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[14]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -603,15 +636,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[15]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -621,15 +656,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[16]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -639,15 +676,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[17]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -657,15 +696,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[18]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -675,15 +716,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[19]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -693,15 +736,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[20]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -711,15 +756,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[21]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -729,15 +776,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[22]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -747,15 +796,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[23]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -765,15 +816,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[24]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -783,15 +836,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[25]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -801,15 +856,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[26]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -819,15 +876,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[27]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -837,15 +896,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[28]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -855,15 +916,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[29]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -873,15 +936,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[30]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v0|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_v1|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a0|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a1|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a2|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_a3|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t6|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t7|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s2|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s3|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s5|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_s6|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
+; RegisterFile:Register_File|Register:Register_t8|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_t9|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k0|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_k1|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
@@ -890,7 +955,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_fp|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; PC_Register:ProgramCounter|PCValue[7..31]                           ; Lost fanout                                       ;
-; Total Number of Removed Registers = 635                             ;                                                   ;
+; Total Number of Removed Registers = 699                             ;                                                   ;
 +---------------------------------------------------------------------+---------------------------------------------------+
 
 
@@ -902,6 +967,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[0]  ; Stuck at GND              ; PC_Register:ProgramCounter|PCValue[0],                          ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v0|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_v1|DataOutput[0],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[0],  ;
@@ -911,6 +977,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[0],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[0],  ;
@@ -920,15 +987,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[0],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_v0|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_v1|DataOutput[25], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[25], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[25], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[25], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[25], ;
@@ -938,15 +1007,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[25], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_v0|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_v1|DataOutput[31], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[31], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[31], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[31], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[31], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[31], ;
@@ -956,15 +1027,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[31]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[23] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[23], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[23], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[23], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[23], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[23], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[23], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[23], ;
@@ -974,15 +1047,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[23]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[22] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[22], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[22], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[22], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[22], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[22], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[22], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[22], ;
@@ -992,15 +1067,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[22]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[21] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[21], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[21], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[21], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[21], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[21], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[21], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[21], ;
@@ -1010,15 +1087,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[21]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[20] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[20], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[20], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[20], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[20], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[20], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[20], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[20], ;
@@ -1028,15 +1107,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[20]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[19] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[19], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[19], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[19], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[19], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[19], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[19], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[19], ;
@@ -1046,15 +1127,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[19]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[18] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[18], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[18], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[18], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[18], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[18], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[18], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[18], ;
@@ -1064,15 +1147,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[18]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[17] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[17], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[17], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[17], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[17], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[17], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[17], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[17], ;
@@ -1082,15 +1167,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[17]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[16] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[16], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[16], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[16], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[16], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[16], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[16], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[16], ;
@@ -1100,15 +1187,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[16]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[15] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[15], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[15], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[15], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[15], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[15], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[15], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[15], ;
@@ -1118,15 +1207,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[15]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[14] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[14], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[14], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[14], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[14], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[14], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[14], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[14], ;
@@ -1136,15 +1227,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[14]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[13] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[13], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[13], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[13], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[13], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[13], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[13], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[13], ;
@@ -1154,15 +1247,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[13]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[12] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[12], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[12], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[12], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[12], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[12], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[12], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[12], ;
@@ -1172,15 +1267,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[12]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[11] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[11], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[11], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[11], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[11], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[11], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[11], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[11], ;
@@ -1190,15 +1287,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[11]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[10] ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[10], ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[10], ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[10], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[10], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[10], ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[10], ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[10], ;
@@ -1208,15 +1307,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[10]  ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[9]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[9],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[9],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[9],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[9],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[9],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[9],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[9],  ;
@@ -1226,15 +1327,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[9]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[8]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[8],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[8],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[8],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[8],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[8],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[8],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[8],  ;
@@ -1244,15 +1347,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[8]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[7]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[7],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[7],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[7],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[7],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[7],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[7],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[7],  ;
@@ -1262,15 +1367,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[7]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[6]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[6],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[6],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[6],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[6],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[6],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[6],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[6],  ;
@@ -1280,15 +1387,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[6]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[5]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[5],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[5],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[5],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[5],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[5],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[5],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[5],  ;
@@ -1298,15 +1407,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[5]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[4]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[4],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[4],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[4],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[4],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[4],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[4],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[4],  ;
@@ -1316,15 +1427,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[4]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[3]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[3],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[3],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[3],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[3],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[3],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[3],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[3],  ;
@@ -1334,15 +1447,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[3]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[2]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[2],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[2],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[2],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[2],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[2],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[2],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[2],  ;
@@ -1352,15 +1467,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_ra|DataOutput[2]   ;
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[1]  ; Stuck at GND              ; RegisterFile:Register_File|Register:Register_v0|DataOutput[1],  ;
 ;                                                                  ; due to stuck port data_in ; RegisterFile:Register_File|Register:Register_v1|DataOutput[1],  ;
-;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a0|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a1|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a2|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_a3|DataOutput[1],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t6|DataOutput[1],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t7|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s2|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s3|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s5|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_s6|DataOutput[1],  ;
+;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t8|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_t9|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k0|DataOutput[1],  ;
 ;                                                                  ;                           ; RegisterFile:Register_File|Register:Register_k1|DataOutput[1],  ;
@@ -1376,12 +1493,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 421   ;
+; Total registers                              ; 357   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 5     ;
-; Number of registers using Asynchronous Clear ; 421   ;
+; Number of registers using Synchronous Load   ; 357   ;
+; Number of registers using Asynchronous Clear ; 357   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 416   ;
+; Number of registers using Clock Enable       ; 352   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1391,10 +1508,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; 16:1               ; 32 bits   ; 320 LEs       ; 128 LEs              ; 192 LEs                ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux2                                ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 128 LEs              ; 32 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux1                                ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1|Mux31 ;
-; 33:1               ; 4 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate|MUX_Output[4]     ;
-; 33:1               ; 28 bits   ; 616 LEs       ; 616 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate|MUX_Output[0]     ;
+; 33:1               ; 31 bits   ; 682 LEs       ; 682 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate|MUX_Output[3]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
@@ -1850,6 +1966,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BNE ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; NBits          ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"                                                                                                                        ;
 +-----------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1890,41 +2016,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+-----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Control:ControlUnit"                                                                    ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; BranchNE ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 421                         ;
+; arriav_ff             ; 357                         ;
 ;     CLR SLD           ; 5                           ;
-;     ENA CLR           ; 416                         ;
-; arriav_lcell_comb     ; 609                         ;
+;     ENA CLR SLD       ; 352                         ;
+; arriav_lcell_comb     ; 546                         ;
 ;     arith             ; 43                          ;
-;         1 data inputs ; 7                           ;
+;         1 data inputs ; 6                           ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 1                           ;
-;         5 data inputs ; 33                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 565                         ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 84                          ;
-;         4 data inputs ; 81                          ;
-;         5 data inputs ; 181                         ;
-;         6 data inputs ; 217                         ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 32                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 500                         ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 76                          ;
+;         4 data inputs ; 95                          ;
+;         5 data inputs ; 144                         ;
+;         6 data inputs ; 177                         ;
 ; boundary_port         ; 74                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.10                       ;
-; Average LUT depth     ; 7.98                        ;
+; Max LUT depth         ; 10.50                       ;
+; Average LUT depth     ; 8.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1933,7 +2051,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1943,7 +2061,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Mar 29 00:35:09 2020
+    Info: Processing started: Sun Mar 29 01:18:57 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_Processor -c MIPS_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1982,31 +2100,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: ALU File: C:/MIPSProjects/MIPSProcessor_ver1/ALU.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file adder32bits.v
     Info (12023): Found entity 1: Adder32bits File: C:/MIPSProjects/MIPSProcessor_ver1/Adder32bits.v Line: 13
-Warning (10236): Verilog HDL Implicit Net warning at MIPS_Processor.v(208): created implicit net for "Memory_wire" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 208
+Warning (10236): Verilog HDL Implicit Net warning at MIPS_Processor.v(209): created implicit net for "Memory_wire" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 209
 Info (12127): Elaborating entity "MIPS_Processor" for the top level hierarchy
-Info (12128): Elaborating entity "Control" for hierarchy "Control:ControlUnit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 83
-Info (12128): Elaborating entity "PC_Register" for hierarchy "PC_Register:ProgramCounter" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 93
-Info (12128): Elaborating entity "ProgramMemory" for hierarchy "ProgramMemory:ROMProgramMemory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 105
-Warning (10850): Verilog HDL warning at ProgramMemory.v(34): number of words (28) in memory file does not match the number of elements in the address range [0:31] File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 34
+Info (12128): Elaborating entity "Control" for hierarchy "Control:ControlUnit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 84
+Info (12128): Elaborating entity "PC_Register" for hierarchy "PC_Register:ProgramCounter" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 94
+Info (12128): Elaborating entity "ProgramMemory" for hierarchy "ProgramMemory:ROMProgramMemory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 106
+Warning (10850): Verilog HDL warning at ProgramMemory.v(34): number of words (36) in memory file does not match the number of elements in the address range [0:31] File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 34
 Warning (10030): Net "rom.data_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.waddr_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.we_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
-Info (12128): Elaborating entity "Adder32bits" for hierarchy "Adder32bits:PC_Plus_4" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 114
-Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForRTypeAndIType" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 134
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:Register_File" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 151
+Info (12128): Elaborating entity "Adder32bits" for hierarchy "Adder32bits:PC_Plus_4" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 115
+Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForRTypeAndIType" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 135
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:Register_File" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 152
 Info (12128): Elaborating entity "DecoderRegisterFile" for hierarchy "RegisterFile:Register_File|DecoderRegisterFile:Decoder" File: C:/MIPSProjects/MIPSProcessor_ver1/RegisterFile.v Line: 42
 Info (12128): Elaborating entity "Register" for hierarchy "RegisterFile:Register_File|Register:Register_Zero" File: C:/MIPSProjects/MIPSProcessor_ver1/RegisterFile.v Line: 58
 Info (12128): Elaborating entity "MUXRegisterFile" for hierarchy "RegisterFile:Register_File|MUXRegisterFile:MUXRegister1" File: C:/MIPSProjects/MIPSProcessor_ver1/RegisterFile.v Line: 480
-Info (12128): Elaborating entity "SignExtend" for hierarchy "SignExtend:SignExtendForConstants" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 158
-Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForReadDataAndInmediate" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 174
-Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:ArithmeticLogicUnitControl" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 184
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic_Logic_Unit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 196
-Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:Memory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 209
-Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:ShitLeft2_SignExtend" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 234
+Info (12128): Elaborating entity "SignExtend" for hierarchy "SignExtend:SignExtendForConstants" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 159
+Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForReadDataAndInmediate" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 175
+Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:ArithmeticLogicUnitControl" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 185
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic_Logic_Unit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 197
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:Memory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 210
+Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:ShitLeft2_SignExtend" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 235
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276004): RAM logic "RegisterFile:Register_File|DecoderRegisterFile:Decoder|Ram0" is uninferred due to inappropriate RAM size File: C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v Line: 20
     Info (276004): RAM logic "ProgramMemory:ROMProgramMemory|rom" is uninferred due to inappropriate RAM size File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/MIPSProjects/MIPSProcessor_ver1/db/MIPS_Processor.ram0_ProgramMemory_93ad684.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 25 registers lost all their fanouts during netlist optimizations.
@@ -2021,14 +2138,14 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "PortIn[5]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[6]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[7]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
-Info (21057): Implemented 1099 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 972 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 1025 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info (21061): Implemented 898 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
     Info: Peak virtual memory: 726 megabytes
-    Info: Processing ended: Sun Mar 29 00:35:25 2020
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Processing ended: Sun Mar 29 01:19:12 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:27
 
 

@@ -35,8 +35,17 @@
 	addi $t0, $zero, 200	#It´s not going to show 200 because it will be ignored
 anotherBranch:
 	addi $t0, $zero, 64
-	beq $zero, $t1, end
-	
+	beq $t1, $zero, end
+
+	#bne test
+	addi $s0, $zero, 500
+	addi $s1, $zero, 500
+	bne $s0, $s1, bneBranch
+	addi $t0, $zero, 200	#It´s going to show 200 
+bneBranch:
+	addi $t0, $zero, 516
+	bne $t1, $zero, end
+			
 	# 2's complement of register $t0
 	nor $at,$t0,$t0
 	addi $t0,$at,1

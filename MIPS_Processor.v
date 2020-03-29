@@ -57,8 +57,9 @@ wire [31:0] PC_4_wire;
 wire [31:0] InmmediateExtendAnded_wire;
 wire [31:0] PCtoBranch_wire;
 wire [31:0] MemoryOrAlu_wire;
-wire [31:0] PC_4_Plus_ShitLeft2_SignExtend_wire;
+wire [31:0] BranchAddress_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_wire;
+wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
 integer ALUStatus;
 
 
@@ -88,7 +89,7 @@ ProgramCounter
 (
 	.clk(clk),
 	.reset(reset),
-	.NewPC(MUX_PC_4_OR_BEQ_wire),
+	.NewPC(MUX_PC_4_OR_BEQ_OR_BNE_wire),
 	.PCValue(PC_wire)
 );
 
@@ -240,7 +241,7 @@ PC_4_Plus_ShitLeft2_SignExtend
 	.Data0(PC_4_wire),
 	.Data1(ShitLeft2_SignExtend_wire),
 	
-	.Result(PC_4_Plus_ShitLeft2_SignExtend_wire)
+	.Result(BranchAddress_wire)
 );
 
 
@@ -252,9 +253,23 @@ MUX_PC_4_OR_BEQ
 (
 	.Selector(BranchEQ_wire & Zero_wire),
 	.MUX_Data0(PC_4_wire),
-	.MUX_Data1(PC_4_Plus_ShitLeft2_SignExtend_wire),
+	.MUX_Data1(BranchAddress_wire),
 	
 	.MUX_Output(MUX_PC_4_OR_BEQ_wire)
+
+);
+
+Multiplexer2to1
+#(
+	.NBits(32)
+)
+MUX_PC_4_OR_BNE
+(
+	.Selector(BranchNE_wire & (!Zero_wire)),
+	.MUX_Data0(MUX_PC_4_OR_BEQ_wire),
+	.MUX_Data1(BranchAddress_wire),
+	
+	.MUX_Output(MUX_PC_4_OR_BEQ_OR_BNE_wire)
 
 );
 endmodule
