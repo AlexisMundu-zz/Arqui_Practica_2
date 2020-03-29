@@ -24,6 +24,18 @@
 	#Andi test
 	andi $t5, $t3, 1	#3 & 1 = 1
 	andi $t5, $t3, 7	#3 & 7 = 3
+	andi $t5, $t3, 7	#3 & 7 = 3
+	andi $t5, $t3, 7	#3 & 7 = 3
+	andi $t5, $t3, 7	#3 & 7 = 3
+	
+	#beq
+	addi $s0, $zero, 50
+	addi $s1, $zero, 50
+	beq $s0, $s1, anotherBranch
+	addi $t0, $zero, 200	#It´s not going to show 200 because it will be ignored
+anotherBranch:
+	addi $t0, $zero, 64
+	beq $zero, $t1, end
 	
 	# 2's complement of register $t0
 	nor $at,$t0,$t0
@@ -36,4 +48,5 @@
 	addi $t0,$zero,5
 	addi  $t8,$zero, 10
 	
+	end:
 	

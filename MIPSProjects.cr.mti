@@ -68,13 +68,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	SignExtend
 
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/ALUControl.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ALUControl.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ALUControl
-
-Top level modules:
-	ALUControl
-
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/ShiftLeft2.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ShiftLeft2.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ShiftLeft2

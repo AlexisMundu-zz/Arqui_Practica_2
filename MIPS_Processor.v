@@ -50,12 +50,15 @@ wire [31:0] Instruction_wire;
 wire [31:0] ReadData1_wire;
 wire [31:0] ReadData2_wire;
 wire [31:0] InmmediateExtend_wire;
+wire [31:0] ShitLeft2_SignExtend_wire;
 wire [31:0] ReadData2OrInmmediate_wire;
 wire [31:0] ALUResult_wire;
 wire [31:0] PC_4_wire;
 wire [31:0] InmmediateExtendAnded_wire;
 wire [31:0] PCtoBranch_wire;
 wire [31:0] MemoryOrAlu_wire;
+wire [31:0] PC_4_Plus_ShitLeft2_SignExtend_wire;
+wire [31:0] MUX_PC_4_OR_BEQ_wire;
 integer ALUStatus;
 
 
@@ -85,7 +88,7 @@ ProgramCounter
 (
 	.clk(clk),
 	.reset(reset),
-	.NewPC(PC_4_wire),
+	.NewPC(MUX_PC_4_OR_BEQ_wire),
 	.PCValue(PC_wire)
 );
 
@@ -102,7 +105,7 @@ ROMProgramMemory
 );
 
 Adder32bits
-PC_Puls_4
+PC_Plus_4
 (
 	.Data0(PC_wire),
 	.Data1(4),
@@ -222,5 +225,37 @@ MUX_MemoryOrAlu
 
 assign  PortOut = MemoryOrAlu_wire;
 
+
+ShiftLeft2
+ShitLeft2_SignExtend
+(
+	.DataInput(InmmediateExtend_wire),
+	.DataOutput(ShitLeft2_SignExtend_wire)
+);
+
+
+Adder32bits
+PC_4_Plus_ShitLeft2_SignExtend
+(
+	.Data0(PC_4_wire),
+	.Data1(ShitLeft2_SignExtend_wire),
+	
+	.Result(PC_4_Plus_ShitLeft2_SignExtend_wire)
+);
+
+
+Multiplexer2to1
+#(
+	.NBits(32)
+)
+MUX_PC_4_OR_BEQ
+(
+	.Selector(BranchEQ_wire & Zero_wire),
+	.MUX_Data0(PC_4_wire),
+	.MUX_Data1(PC_4_Plus_ShitLeft2_SignExtend_wire),
+	
+	.MUX_Output(MUX_PC_4_OR_BEQ_wire)
+
+);
 endmodule
 
