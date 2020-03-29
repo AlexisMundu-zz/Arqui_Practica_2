@@ -18,9 +18,12 @@
 	and $t4,$t1,$t2
 	addi $t5,$t4,1
 	
-	add $t3, $t3, $zero
-	add $t0, $t0, $zero
-	sub $t3, $t3, $t0 
+	#Sub test
+	sub $t3, $t3, $t0 	#5 - 2 = 3
+	
+	#Andi test
+	andi $t5, $t3, 1	#3 & 1 = 1
+	andi $t5, $t3, 7	#3 & 7 = 3
 	
 	# 2's complement of register $t0
 	nor $at,$t0,$t0
