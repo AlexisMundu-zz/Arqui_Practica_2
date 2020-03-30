@@ -53,7 +53,6 @@ wire [31:0] Instruction_wire;
 wire [31:0] ReadData1_wire;
 wire [31:0] ReadData2_wire;
 wire [31:0] InmmediateExtend_wire;
-wire [31:0] ShitLeft2_Jump_wire;
 wire [31:0] ShitLeft2_SignExtend_wire;
 wire [31:0] ReadData2OrInmmediate_wire;
 wire [31:0] ALUResult_wire;
@@ -64,7 +63,6 @@ wire [31:0] MemoryOrAlu_wire;
 wire [31:0] BranchAddress_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
-wire [31:0] PC_4_ShiftLeft2_Jump_wire;
 wire [31:0] Memory_wire;
 integer ALUStatus;
 
