@@ -7,10 +7,10 @@ add wave -noupdate -radix unsigned /MIPS_Processor_TB/ALUResultOut
 add wave -noupdate -radix unsigned /MIPS_Processor_TB/PortOut
 add wave -noupdate /MIPS_Processor_TB/PCOut
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {5 ps} 0}
+WaveRestoreCursors {{Cursor 1} {17 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
-configure wave -valuecolwidth 40
+configure wave -valuecolwidth 96
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
 configure wave -snapdistance 10
@@ -23,4 +23,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {31 ps}
+WaveRestoreZoom {0 ps} {69 ps}
