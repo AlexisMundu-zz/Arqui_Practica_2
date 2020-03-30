@@ -5,6 +5,7 @@ add wave -noupdate /MIPS_Processor_TB/reset
 add wave -noupdate /MIPS_Processor_TB/PortIn
 add wave -noupdate /MIPS_Processor_TB/ALUResultOut
 add wave -noupdate /MIPS_Processor_TB/PortOut
+add wave -noupdate /MIPS_Processor_TB/PCOut
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {7 ps} 0}
 quietly wave cursor active 1
@@ -22,4 +23,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {31 ps}
+WaveRestoreZoom {171 ps} {202 ps}

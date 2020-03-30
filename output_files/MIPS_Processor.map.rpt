@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_Processor
-Sun Mar 29 01:19:12 2020
+Sun Mar 29 21:26:55 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,13 +63,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  55. Parameter Settings for User Entity Instance: Adder32bits:PC_4_Plus_ShitLeft2_SignExtend
  56. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ
  57. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BNE
- 58. Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"
- 59. Port Connectivity Checks: "DataMemory:Memory"
- 60. Port Connectivity Checks: "RegisterFile:Register_File|Register:Register_Zero"
- 61. Port Connectivity Checks: "Adder32bits:PC_Plus_4"
- 62. Post-Synthesis Netlist Statistics for Top Partition
- 63. Elapsed Time Per Partition
- 64. Analysis & Synthesis Messages
+ 58. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump
+ 59. Port Connectivity Checks: "ShiftLeft2:ShitLeft2_Jump"
+ 60. Port Connectivity Checks: "DataMemory:Memory"
+ 61. Port Connectivity Checks: "RegisterFile:Register_File|Register:Register_Zero"
+ 62. Port Connectivity Checks: "Adder32bits:PC_Plus_4"
+ 63. Post-Synthesis Netlist Statistics for Top Partition
+ 64. Elapsed Time Per Partition
+ 65. Analysis & Synthesis Messages
 
 
 
@@ -95,14 +96,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Mar 29 01:19:12 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Mar 29 21:26:55 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; MIPS_Processor                              ;
 ; Top-level Entity Name           ; MIPS_Processor                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 357                                         ;
-; Total pins                      ; 74                                          ;
+; Total registers                 ; 382                                         ;
+; Total pins                      ; 106                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -250,25 +251,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------+
 ; Resource                                    ; Usage                            ;
 +---------------------------------------------+----------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 523                              ;
+; Estimate of Logic utilization (ALMs needed) ; 551                              ;
 ;                                             ;                                  ;
-; Combinational ALUT usage for logic          ; 546                              ;
+; Combinational ALUT usage for logic          ; 601                              ;
 ;     -- 7 input functions                    ; 3                                ;
 ;     -- 6 input functions                    ; 177                              ;
-;     -- 5 input functions                    ; 176                              ;
-;     -- 4 input functions                    ; 96                               ;
-;     -- <=3 input functions                  ; 94                               ;
+;     -- 5 input functions                    ; 171                              ;
+;     -- 4 input functions                    ; 101                              ;
+;     -- <=3 input functions                  ; 149                              ;
 ;                                             ;                                  ;
-; Dedicated logic registers                   ; 357                              ;
+; Dedicated logic registers                   ; 382                              ;
 ;                                             ;                                  ;
-; I/O pins                                    ; 74                               ;
+; I/O pins                                    ; 106                              ;
 ;                                             ;                                  ;
 ; Total DSP Blocks                            ; 0                                ;
 ;                                             ;                                  ;
 ; Maximum fan-out node                        ; ALU:Arithmetic_Logic_Unit|Mux1~0 ;
 ; Maximum fan-out                             ; 395                              ;
-; Total fan-out                               ; 4922                             ;
-; Average fan-out                             ; 4.68                             ;
+; Total fan-out                               ; 5226                             ;
+; Average fan-out                             ; 4.37                             ;
 +---------------------------------------------+----------------------------------+
 
 
@@ -277,16 +278,16 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name         ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
-; |MIPS_Processor                                  ; 546 (0)             ; 357 (0)                   ; 0                 ; 0          ; 74   ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor      ; work         ;
+; |MIPS_Processor                                  ; 601 (0)             ; 382 (0)                   ; 0                 ; 0          ; 106  ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor      ; work         ;
 ;    |ALU:Arithmetic_Logic_Unit|                   ; 115 (115)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit                               ; ALU                 ; work         ;
 ;    |ALUControl:ArithmeticLogicUnitControl|       ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALUControl:ArithmeticLogicUnitControl                   ; ALUControl          ; work         ;
-;    |Adder32bits:PC_4_Plus_ShitLeft2_SignExtend|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_4_Plus_ShitLeft2_SignExtend              ; Adder32bits         ; work         ;
-;    |Adder32bits:PC_Plus_4|                       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_Plus_4                                   ; Adder32bits         ; work         ;
+;    |Adder32bits:PC_4_Plus_ShitLeft2_SignExtend|  ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_4_Plus_ShitLeft2_SignExtend              ; Adder32bits         ; work         ;
+;    |Adder32bits:PC_Plus_4|                       ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_Plus_4                                   ; Adder32bits         ; work         ;
 ;    |Control:ControlUnit|                         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Control:ControlUnit                                     ; Control             ; work         ;
 ;    |Multiplexer2to1:MUX_ForReadDataAndInmediate| ; 197 (197)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate             ; Multiplexer2to1     ; work         ;
 ;    |Multiplexer2to1:MUX_PC_4_OR_BNE|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_PC_4_OR_BNE                         ; Multiplexer2to1     ; work         ;
-;    |PC_Register:ProgramCounter|                  ; 0 (0)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|PC_Register:ProgramCounter                              ; PC_Register         ; work         ;
-;    |ProgramMemory:ROMProgramMemory|              ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory       ; work         ;
+;    |PC_Register:ProgramCounter|                  ; 0 (0)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|PC_Register:ProgramCounter                              ; PC_Register         ; work         ;
+;    |ProgramMemory:ROMProgramMemory|              ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory       ; work         ;
 ;    |RegisterFile:Register_File|                  ; 179 (0)             ; 352 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File                              ; RegisterFile        ; work         ;
 ;       |DecoderRegisterFile:Decoder|              ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|DecoderRegisterFile:Decoder  ; DecoderRegisterFile ; work         ;
 ;       |MUXRegisterFile:MUXRegister1|             ; 166 (166)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1 ; MUXRegisterFile     ; work         ;
@@ -954,8 +955,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RegisterFile:Register_File|Register:Register_sp|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_fp|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
 ; RegisterFile:Register_File|Register:Register_ra|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable       ;
-; PC_Register:ProgramCounter|PCValue[7..31]                           ; Lost fanout                                       ;
-; Total Number of Removed Registers = 699                             ;                                                   ;
+; Total Number of Removed Registers = 674                             ;                                                   ;
 +---------------------------------------------------------------------+---------------------------------------------------+
 
 
@@ -1493,10 +1493,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 357   ;
+; Total registers                              ; 382   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 357   ;
-; Number of registers using Asynchronous Clear ; 357   ;
+; Number of registers using Synchronous Load   ; 382   ;
+; Number of registers using Asynchronous Clear ; 382   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 352   ;
 ; Number of registers using Preset             ; 0     ;
@@ -1976,13 +1976,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"                                                                                                                        ;
-+-----------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity ; Details                                                                                                                                             ;
-+-----------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; MUX_Data1 ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "MUX_Data1[31..1]" will be connected to GND. ;
-+-----------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; NBits          ; 32    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ShiftLeft2:ShitLeft2_Jump"                                                                        ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; DataOutput[31..28] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1992,7 +2002,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; WriteData ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 ; Address   ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; ReadData  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "ReadData[7..1]" have no fanouts                                                        ;
+; ReadData  ; Output ; Warning  ; Output or bidir port (8 bits) is smaller than the port expression (32 bits) it drives.  The 24 most-significant bit(s) in the port expression will be connected to GND.            ;
 +-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -2021,28 +2031,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 357                         ;
-;     CLR SLD           ; 5                           ;
+; arriav_ff             ; 382                         ;
+;     CLR SLD           ; 30                          ;
 ;     ENA CLR SLD       ; 352                         ;
-; arriav_lcell_comb     ; 546                         ;
-;     arith             ; 43                          ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
+; arriav_lcell_comb     ; 602                         ;
+;     arith             ; 93                          ;
+;         1 data inputs ; 32                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 22                          ;
 ;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 32                          ;
 ;     extend            ; 3                           ;
 ;         7 data inputs ; 3                           ;
-;     normal            ; 500                         ;
-;         2 data inputs ; 8                           ;
+;     normal            ; 506                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 13                          ;
 ;         3 data inputs ; 76                          ;
-;         4 data inputs ; 95                          ;
-;         5 data inputs ; 144                         ;
+;         4 data inputs ; 100                         ;
+;         5 data inputs ; 139                         ;
 ;         6 data inputs ; 177                         ;
-; boundary_port         ; 74                          ;
+; boundary_port         ; 106                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.50                       ;
-; Average LUT depth     ; 8.00                        ;
+; Average LUT depth     ; 7.59                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2051,7 +2062,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -2061,7 +2072,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Mar 29 01:18:57 2020
+    Info: Processing started: Sun Mar 29 21:26:29 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_Processor -c MIPS_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2100,33 +2111,341 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: ALU File: C:/MIPSProjects/MIPSProcessor_ver1/ALU.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file adder32bits.v
     Info (12023): Found entity 1: Adder32bits File: C:/MIPSProjects/MIPSProcessor_ver1/Adder32bits.v Line: 13
-Warning (10236): Verilog HDL Implicit Net warning at MIPS_Processor.v(209): created implicit net for "Memory_wire" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 209
 Info (12127): Elaborating entity "MIPS_Processor" for the top level hierarchy
-Info (12128): Elaborating entity "Control" for hierarchy "Control:ControlUnit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 84
-Info (12128): Elaborating entity "PC_Register" for hierarchy "PC_Register:ProgramCounter" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 94
-Info (12128): Elaborating entity "ProgramMemory" for hierarchy "ProgramMemory:ROMProgramMemory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 106
+Info (12128): Elaborating entity "Control" for hierarchy "Control:ControlUnit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 92
+Info (12128): Elaborating entity "PC_Register" for hierarchy "PC_Register:ProgramCounter" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 102
+Info (12128): Elaborating entity "ProgramMemory" for hierarchy "ProgramMemory:ROMProgramMemory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 116
 Warning (10850): Verilog HDL warning at ProgramMemory.v(34): number of words (36) in memory file does not match the number of elements in the address range [0:31] File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 34
 Warning (10030): Net "rom.data_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.waddr_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.we_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
-Info (12128): Elaborating entity "Adder32bits" for hierarchy "Adder32bits:PC_Plus_4" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 115
-Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForRTypeAndIType" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 135
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:Register_File" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 152
+Info (12128): Elaborating entity "Adder32bits" for hierarchy "Adder32bits:PC_Plus_4" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 125
+Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForRTypeAndIType" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 145
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:Register_File" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 162
 Info (12128): Elaborating entity "DecoderRegisterFile" for hierarchy "RegisterFile:Register_File|DecoderRegisterFile:Decoder" File: C:/MIPSProjects/MIPSProcessor_ver1/RegisterFile.v Line: 42
 Info (12128): Elaborating entity "Register" for hierarchy "RegisterFile:Register_File|Register:Register_Zero" File: C:/MIPSProjects/MIPSProcessor_ver1/RegisterFile.v Line: 58
 Info (12128): Elaborating entity "MUXRegisterFile" for hierarchy "RegisterFile:Register_File|MUXRegisterFile:MUXRegister1" File: C:/MIPSProjects/MIPSProcessor_ver1/RegisterFile.v Line: 480
-Info (12128): Elaborating entity "SignExtend" for hierarchy "SignExtend:SignExtendForConstants" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 159
-Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForReadDataAndInmediate" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 175
-Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:ArithmeticLogicUnitControl" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 185
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic_Logic_Unit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 197
-Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:Memory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 210
-Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:ShitLeft2_SignExtend" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 235
+Info (12128): Elaborating entity "SignExtend" for hierarchy "SignExtend:SignExtendForConstants" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 169
+Info (12128): Elaborating entity "Multiplexer2to1" for hierarchy "Multiplexer2to1:MUX_ForReadDataAndInmediate" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 185
+Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:ArithmeticLogicUnitControl" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 195
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic_Logic_Unit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 207
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:Memory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 220
+Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:ShitLeft2_SignExtend" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 244
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Memory_wire[31]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[30]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[29]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[28]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[27]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[26]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[25]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[24]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[23]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[22]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[21]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[20]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[19]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[18]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[17]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[16]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[15]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[14]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[13]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[12]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[11]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[10]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[9]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
+    Warning (12110): Net "Memory_wire[8]" is missing source, defaulting to GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 69
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276004): RAM logic "RegisterFile:Register_File|DecoderRegisterFile:Decoder|Ram0" is uninferred due to inappropriate RAM size File: C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v Line: 20
     Info (276004): RAM logic "ProgramMemory:ROMProgramMemory|rom" is uninferred due to inappropriate RAM size File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "PortOut[0]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[1]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[2]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[3]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[4]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[5]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[6]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[7]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[8]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[9]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[10]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[11]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[12]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[13]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[14]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[15]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[16]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[17]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[18]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[19]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[20]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[21]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[22]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[23]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[24]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[25]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[26]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[27]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[28]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[29]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[30]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PortOut[31]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 23
+    Warning (13410): Pin "PCOut[0]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 25
+    Warning (13410): Pin "PCOut[1]" is stuck at GND File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 25
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 25 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 8 input pin(s) that do not drive logic
@@ -2138,14 +2457,14 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "PortIn[5]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[6]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[7]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
-Info (21057): Implemented 972 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1059 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 898 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 726 megabytes
-    Info: Processing ended: Sun Mar 29 01:19:12 2020
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21059): Implemented 96 output pins
+    Info (21061): Implemented 953 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 325 warnings
+    Info: Peak virtual memory: 728 megabytes
+    Info: Processing ended: Sun Mar 29 21:26:55 2020
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:34
 
 

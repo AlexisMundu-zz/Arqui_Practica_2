@@ -18,6 +18,7 @@ reg reset = 0;
 reg [7:0] PortIn; 
 wire [31:0] ALUResultOut;  
 wire [31:0] PortOut;
+wire [31:0] PCOut;
   
   
 MIPS_Processor
@@ -26,7 +27,8 @@ DUV
 	.clk(clk),
 	.reset(reset),
 	.ALUResultOut(ALUResultOut),
-	.PortOut(PortOut)
+	.PortOut(PortOut),
+	.PCOut(PCOut)
 
 );
 /*********************************************************/

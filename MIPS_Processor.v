@@ -20,15 +20,18 @@ module MIPS_Processor
 	input [7:0] PortIn,
 	// Output
 	output [31:0] ALUResultOut,
-	output [31:0] PortOut
+	output [31:0] PortOut,
+	output [31:0] PCOut
 );
 //******************************************************************/
 //******************************************************************/
 
+assign  PortOut = 0;
 
 //******************************************************************/
 //******************************************************************/
 // Data types to connect modules
+wire Jump_wire;
 wire BranchNE_wire;
 wire BranchEQ_wire;
 wire RegDst_wire;
@@ -50,6 +53,7 @@ wire [31:0] Instruction_wire;
 wire [31:0] ReadData1_wire;
 wire [31:0] ReadData2_wire;
 wire [31:0] InmmediateExtend_wire;
+wire [31:0] ShitLeft2_Jump_wire;
 wire [31:0] ShitLeft2_SignExtend_wire;
 wire [31:0] ReadData2OrInmmediate_wire;
 wire [31:0] ALUResult_wire;
@@ -60,6 +64,9 @@ wire [31:0] MemoryOrAlu_wire;
 wire [31:0] BranchAddress_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
+wire [31:0] PC_4_ShiftLeft2_Jump_wire;
+wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire;
+wire [31:0] Memory_wire;
 integer ALUStatus;
 
 
@@ -80,7 +87,8 @@ ControlUnit
 	.MemWrite(MemWrite_wire),
 	.ALUOp(ALUOp_wire),
 	.ALUSrc(ALUSrc_wire),
-	.RegWrite(RegWrite_wire)
+	.RegWrite(RegWrite_wire),
+	.Jump(Jump_wire)
 );
 
 
@@ -89,9 +97,11 @@ ProgramCounter
 (
 	.clk(clk),
 	.reset(reset),
-	.NewPC(MUX_PC_4_OR_BEQ_OR_BNE_wire),
+	.NewPC(MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire),
 	.PCValue(PC_wire)
 );
+
+assign PCOut = PC_wire;
 
 
 
@@ -224,7 +234,6 @@ MUX_MemoryOrAlu
 
 );
 
-assign  PortOut = MemoryOrAlu_wire;
 
 
 ShiftLeft2
@@ -259,6 +268,7 @@ MUX_PC_4_OR_BEQ
 
 );
 
+
 Multiplexer2to1
 #(
 	.NBits(32)
@@ -270,6 +280,31 @@ MUX_PC_4_OR_BNE
 	.MUX_Data1(BranchAddress_wire),
 	
 	.MUX_Output(MUX_PC_4_OR_BEQ_OR_BNE_wire)
+
+);
+
+
+ShiftLeft2
+ShitLeft2_Jump
+(
+	.DataInput(Instruction_wire),
+	.DataOutput(ShitLeft2_Jump_wire)
+);
+
+//assign PC_4_ShiftLeft2_Jump_wire = ;
+
+
+Multiplexer2to1
+#(
+	.NBits(32)
+)
+MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump
+(
+	.Selector(Jump_wire),
+	.MUX_Data0(MUX_PC_4_OR_BEQ_OR_BNE_wire),
+	.MUX_Data1({PC_4_wire[31:28], ShitLeft2_Jump_wire[27:0]}),
+	
+	.MUX_Output(MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire)
 
 );
 endmodule
