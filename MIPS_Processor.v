@@ -65,7 +65,6 @@ wire [31:0] BranchAddress_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
 wire [31:0] PC_4_ShiftLeft2_Jump_wire;
-wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire;
 wire [31:0] Memory_wire;
 integer ALUStatus;
 
@@ -97,7 +96,7 @@ ProgramCounter
 (
 	.clk(clk),
 	.reset(reset),
-	.NewPC(MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire),
+	.NewPC(MUX_PC_wire),
 	.PCValue(PC_wire)
 );
 
@@ -284,15 +283,6 @@ MUX_PC_4_OR_BNE
 );
 
 
-ShiftLeft2
-ShitLeft2_Jump
-(
-	.DataInput(Instruction_wire),
-	.DataOutput(ShitLeft2_Jump_wire)
-);
-
-//assign PC_4_ShiftLeft2_Jump_wire = ;
-
 
 Multiplexer2to1
 #(
@@ -302,10 +292,10 @@ MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump
 (
 	.Selector(Jump_wire),
 	.MUX_Data0(MUX_PC_4_OR_BEQ_OR_BNE_wire),
-	.MUX_Data1({PC_4_wire[31:28], ShitLeft2_Jump_wire[27:0]}),
+	.MUX_Data1({16'b0, Instruction_wire[13:0], 2'b00}), //PC_4_wire[31:28], Instruction_wire[25:0], 2'b00 ser+ía si tuvieramos muchas direcciones pero 
+																		 // como el MIPS no tiene muchas entonces solo le pasamos los primeros 4 nibbles
 	
-	.MUX_Output(MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire)
-
+	.MUX_Output(MUX_PC_wire) //Es el wire que se conecta para indicar el nuevo PC
 );
 endmodule
 
