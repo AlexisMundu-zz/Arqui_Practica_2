@@ -45,6 +45,7 @@ localparam I_Type_SW 	= 6'h2b;
 
 //Las tipo J también tienen variaciones en el OpCode
 localparam J_Type_J 		= 6'h2;
+localparam J_Type_JAL	= 6'h3;
 
 
 reg [11:0] ControlValues;
@@ -61,6 +62,7 @@ always@(OP) begin
 		I_Type_LW:		ControlValues= 12'b0_0_111_10_00_100;
 		I_Type_SW:		ControlValues= 12'b0_0_100_01_00_100;
 		J_Type_J:		ControlValues= 12'b1_0_000_00_00_000;
+		J_Type_JAL:		ControlValues= 12'b1_0_001_00_00_000;
 		default:
 			ControlValues= 10'b0000000000;
 		endcase
