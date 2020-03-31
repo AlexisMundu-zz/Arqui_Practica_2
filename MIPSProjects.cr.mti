@@ -1,11 +1,4 @@
-C:/MIPSProjects/MIPSProcessor_ver1/Control.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/Control.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module Control
-
-Top level modules:
-	Control
-
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v
+C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ProgramMemory
 
@@ -68,6 +61,20 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	SignExtend
 
+} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module DecoderRegisterFile
+
+Top level modules:
+	DecoderRegisterFile
+
+} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/DataMemory.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/DataMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/ALUControl.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ALUControl.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ALUControl
@@ -82,19 +89,8 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ShiftLeft2
 
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/DataMemory.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/DataMemory.v
+} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/Definitions.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/Definitions.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module DataMemory
-
-Top level modules:
-	DataMemory
-
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module DecoderRegisterFile
-
-Top level modules:
-	DecoderRegisterFile
 
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/ANDGate.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ANDGate.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -102,9 +98,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	ANDGate
-
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/Definitions.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/Definitions.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/MUXRegisterFile.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/MUXRegisterFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

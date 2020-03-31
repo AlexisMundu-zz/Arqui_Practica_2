@@ -26,16 +26,25 @@ module Control
 	output RegWrite,
 	output [2:0]ALUOp
 );
+
+
+// Todos los OpCodes son basados en la greencard
+
+// El OpCode para las tipo R siempre son 0
 localparam R_Type = 0;
-localparam I_Type_ADDI = 6'h8;
-localparam I_Type_ORI = 6'hd;
-localparam I_Type_ANDI = 6'hc;
-localparam I_Type_BEQ = 6'h4;
-localparam I_Type_BNE = 6'h5;
-localparam I_Type_LUI = 6'hf;
-localparam I_Type_LW = 6'h23;
-localparam I_Type_SW = 6'h2b;
-localparam J_Type_J = 6'h2;
+
+// Las tipo I varian
+localparam I_Type_ADDI 	= 6'h8;
+localparam I_Type_ORI 	= 6'hd;
+localparam I_Type_ANDI 	= 6'hc;
+localparam I_Type_BEQ 	= 6'h4;
+localparam I_Type_BNE 	= 6'h5;
+localparam I_Type_LUI 	= 6'hf;
+localparam I_Type_LW 	= 6'h23;
+localparam I_Type_SW 	= 6'h2b;
+
+//Las tipo J también tienen variaciones en el OpCode
+localparam J_Type_J 		= 6'h2;
 
 
 reg [11:0] ControlValues;
@@ -57,16 +66,16 @@ always@(OP) begin
 		endcase
 end	
 	
-assign Jump = ControlValues[11];
-assign RegDst = ControlValues[10];
-assign ALUSrc = ControlValues[9];
-assign MemtoReg = ControlValues[8];
-assign RegWrite = ControlValues[7];
-assign MemRead = ControlValues[6];
-assign MemWrite = ControlValues[5];
-assign BranchNE = ControlValues[4];
-assign BranchEQ = ControlValues[3];
-assign ALUOp = ControlValues[2:0];	
+assign Jump 		= ControlValues[11];
+assign RegDst 		= ControlValues[10];
+assign ALUSrc 		= ControlValues[9];
+assign MemtoReg 	= ControlValues[8];
+assign RegWrite 	= ControlValues[7];
+assign MemRead 	= ControlValues[6];
+assign MemWrite 	= ControlValues[5];
+assign BranchNE 	= ControlValues[4];
+assign BranchEQ 	= ControlValues[3];
+assign ALUOp 		= ControlValues[2:0];	
 
 endmodule
 //control//
