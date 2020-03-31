@@ -2,18 +2,19 @@
 .data
 .text
 main:
-	addi $t0, $zero, 5000
-	addi $t0, $zero, 4000
-	addi $t0, $zero, 3000
-	jal otro
-	addi $t0, $zero, 5000
-	jal penultimo
-last:	addi $t0, $zero, 7000
-	jr $ra
-penultimo:	addi $t0, $zero, 9000
-	jal last
-	j end
-otro:
-	add $s1, $zero, $ra
-	jr $ra
+	addi $s0, $zero, 8	#s0 initialize the number of towers
+	ori $s1, $zero, 4097	#add the address 1001
+	sll $s1, $s1, 16	#shift to get the first address of memory
+	add $t0, $zero, $s0	#initialize temp counter i = n
+	add $t1, $zero, $zero	#intialize temp to break cycle
+	add $t2, $zero, $s1	#pointer to first tower
+loop_fill_stack:
+	beq $t0, $t1, end_loop_fill_stack
+	sw $t0, 0($t2)
+	addi $t2, $t2, 4
+	addi $t0, $t0, -1
+	j loop_fill_stack
+end_loop_fill_stack:
+	addi $s0, $zero, 5000
+	add $t0, $zero, $s0
 end:

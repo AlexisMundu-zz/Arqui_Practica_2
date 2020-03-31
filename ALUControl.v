@@ -37,7 +37,8 @@ localparam R_Type_SRL	 = 9'b111_000010; // Funct = 02H
 
 localparam I_Type_ADDI   = 9'b100_xxxxxx;
 localparam I_Type_ORI    = 9'b101_xxxxxx;
-localparam I_Type_ANDI	 = 9'b110_xxxxxx; 
+localparam I_Type_ANDI	 = 9'b110_xxxxxx;	
+localparam I_Type_BRANCH = 9'b001_xxxxxx; 
 localparam I_Type_LUI    = 9'b011_xxxxxx;	
 
 
@@ -58,7 +59,8 @@ always@(Selector)begin
 		R_Type_SUB:		ALUControlValues = 4'b0100;
 		I_Type_LUI: 	ALUControlValues = 4'b0101;	
 		R_Type_SLL:		ALUControlValues = 4'b0110;	
-		R_Type_SRL:		ALUControlValues = 4'b0111;	
+		R_Type_SRL:		ALUControlValues = 4'b0111;
+		I_Type_BRANCH:	ALUControlValues = 4'b0100;
 		default: ALUControlValues = 4'b1001;
 	endcase
 end
