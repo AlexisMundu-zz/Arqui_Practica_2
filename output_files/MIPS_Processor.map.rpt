@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_Processor
-Tue Mar 31 00:35:02 2020
+Tue Mar 31 08:01:35 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,67 +14,66 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |MIPS_Processor
- 13. Parameter Settings for User Entity Instance: PC_Register:ProgramCounter
- 14. Parameter Settings for User Entity Instance: ProgramMemory:ROMProgramMemory
- 15. Parameter Settings for User Entity Instance: Adder32bits:PC_Plus_4
- 16. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ForRTypeAndIType
- 17. Parameter Settings for User Entity Instance: RegisterFile:Register_File
- 18. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_Zero
- 19. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_at
- 20. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_v0
- 21. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_v1
- 22. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a0
- 23. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a1
- 24. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a2
- 25. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a3
- 26. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t0
- 27. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t1
- 28. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t2
- 29. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t3
- 30. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t4
- 31. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t5
- 32. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t6
- 33. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t7
- 34. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s0
- 35. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s1
- 36. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s2
- 37. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s3
- 38. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s4
- 39. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s5
- 40. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s6
- 41. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s7
- 42. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t8
- 43. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t9
- 44. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_k0
- 45. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_k1
- 46. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_gp
- 47. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_sp
- 48. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_fp
- 49. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_ra
- 50. Parameter Settings for User Entity Instance: RegisterFile:Register_File|MUXRegisterFile:MUXRegister1
- 51. Parameter Settings for User Entity Instance: RegisterFile:Register_File|MUXRegisterFile:MUXRegister2
- 52. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ForReadDataAndInmediate
- 53. Parameter Settings for User Entity Instance: DataMemory:Memory
- 54. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_MemoryOrAlu
- 55. Parameter Settings for User Entity Instance: Adder32bits:PC_4_Plus_ShitLeft2_SignExtend
- 56. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ
- 57. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BNE
- 58. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump
- 59. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_RT_OR_RD_OR_$ra
- 60. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4
- 61. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR
- 62. Port Connectivity Checks: "Multiplexer2to1:MUX_RT_OR_RD_OR_$ra"
- 63. Port Connectivity Checks: "Multiplexer2to1:MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump"
- 64. Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"
- 65. Port Connectivity Checks: "RegisterFile:Register_File|Register:Register_Zero"
- 66. Port Connectivity Checks: "Adder32bits:PC_Plus_4"
- 67. Post-Synthesis Netlist Statistics for Top Partition
- 68. Elapsed Time Per Partition
- 69. Analysis & Synthesis Messages
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |MIPS_Processor
+ 12. Parameter Settings for User Entity Instance: PC_Register:ProgramCounter
+ 13. Parameter Settings for User Entity Instance: ProgramMemory:ROMProgramMemory
+ 14. Parameter Settings for User Entity Instance: Adder32bits:PC_Plus_4
+ 15. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ForRTypeAndIType
+ 16. Parameter Settings for User Entity Instance: RegisterFile:Register_File
+ 17. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_Zero
+ 18. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_at
+ 19. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_v0
+ 20. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_v1
+ 21. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a0
+ 22. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a1
+ 23. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a2
+ 24. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_a3
+ 25. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t0
+ 26. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t1
+ 27. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t2
+ 28. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t3
+ 29. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t4
+ 30. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t5
+ 31. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t6
+ 32. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t7
+ 33. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s0
+ 34. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s1
+ 35. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s2
+ 36. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s3
+ 37. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s4
+ 38. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s5
+ 39. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s6
+ 40. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_s7
+ 41. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t8
+ 42. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_t9
+ 43. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_k0
+ 44. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_k1
+ 45. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_gp
+ 46. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_sp
+ 47. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_fp
+ 48. Parameter Settings for User Entity Instance: RegisterFile:Register_File|Register:Register_ra
+ 49. Parameter Settings for User Entity Instance: RegisterFile:Register_File|MUXRegisterFile:MUXRegister1
+ 50. Parameter Settings for User Entity Instance: RegisterFile:Register_File|MUXRegisterFile:MUXRegister2
+ 51. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ForReadDataAndInmediate
+ 52. Parameter Settings for User Entity Instance: DataMemory:Memory
+ 53. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_MemoryOrAlu
+ 54. Parameter Settings for User Entity Instance: Adder32bits:PC_4_Plus_ShitLeft2_SignExtend
+ 55. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ
+ 56. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BNE
+ 57. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump
+ 58. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_RT_OR_RD_OR_$ra
+ 59. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4
+ 60. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR
+ 61. Port Connectivity Checks: "Multiplexer2to1:MUX_RT_OR_RD_OR_$ra"
+ 62. Port Connectivity Checks: "Multiplexer2to1:MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump"
+ 63. Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"
+ 64. Port Connectivity Checks: "RegisterFile:Register_File|Register:Register_Zero"
+ 65. Port Connectivity Checks: "Adder32bits:PC_Plus_4"
+ 66. Post-Synthesis Netlist Statistics for Top Partition
+ 67. Elapsed Time Per Partition
+ 68. Analysis & Synthesis Messages
 
 
 
@@ -100,13 +99,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 31 00:35:02 2020       ;
+; Analysis & Synthesis Status     ; Successful - Tue Mar 31 08:01:35 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; MIPS_Processor                              ;
 ; Top-level Entity Name           ; MIPS_Processor                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 422                                         ;
+; Total registers                 ; 3072                                        ;
 ; Total pins                      ; 106                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -250,66 +249,88 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                    ;
-+---------------------------------------------+--------------------------------------------------+
-; Resource                                    ; Usage                                            ;
-+---------------------------------------------+--------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 533                                              ;
-;                                             ;                                                  ;
-; Combinational ALUT usage for logic          ; 556                                              ;
-;     -- 7 input functions                    ; 1                                                ;
-;     -- 6 input functions                    ; 147                                              ;
-;     -- 5 input functions                    ; 164                                              ;
-;     -- 4 input functions                    ; 103                                              ;
-;     -- <=3 input functions                  ; 141                                              ;
-;                                             ;                                                  ;
-; Dedicated logic registers                   ; 422                                              ;
-;                                             ;                                                  ;
-; I/O pins                                    ; 106                                              ;
-;                                             ;                                                  ;
-; Total DSP Blocks                            ; 0                                                ;
-;                                             ;                                                  ;
-; Maximum fan-out node                        ; ALUControl:ArithmeticLogicUnitControl|Decoder0~0 ;
-; Maximum fan-out                             ; 440                                              ;
-; Total fan-out                               ; 5197                                             ;
-; Average fan-out                             ; 4.37                                             ;
-+---------------------------------------------+--------------------------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 2524      ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 2275      ;
+;     -- 7 input functions                    ; 11        ;
+;     -- 6 input functions                    ; 1471      ;
+;     -- 5 input functions                    ; 226       ;
+;     -- 4 input functions                    ; 119       ;
+;     -- <=3 input functions                  ; 448       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 3072      ;
+;                                             ;           ;
+; I/O pins                                    ; 106       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 3072      ;
+; Total fan-out                               ; 23984     ;
+; Average fan-out                             ; 4.31      ;
++---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
-+------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name     ; Library Name ;
-+------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+-----------------+--------------+
-; |MIPS_Processor                                      ; 556 (1)             ; 422 (0)                   ; 0                 ; 0          ; 106  ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor  ; work         ;
-;    |ALU:Arithmetic_Logic_Unit|                       ; 189 (189)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit                               ; ALU             ; work         ;
-;    |ALUControl:ArithmeticLogicUnitControl|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALUControl:ArithmeticLogicUnitControl                   ; ALUControl      ; work         ;
-;    |Adder32bits:PC_4_Plus_ShitLeft2_SignExtend|      ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_4_Plus_ShitLeft2_SignExtend              ; Adder32bits     ; work         ;
-;    |Adder32bits:PC_Plus_4|                           ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_Plus_4                                   ; Adder32bits     ; work         ;
-;    |Control:ControlUnit|                             ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Control:ControlUnit                                     ; Control         ; work         ;
-;    |Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR| ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR         ; Multiplexer2to1 ; work         ;
-;    |Multiplexer2to1:MUX_ForReadDataAndInmediate|     ; 153 (153)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate             ; Multiplexer2to1 ; work         ;
-;    |Multiplexer2to1:MUX_PC_4_OR_BNE|                 ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_PC_4_OR_BNE                         ; Multiplexer2to1 ; work         ;
-;    |Multiplexer2to1:MUX_RT_OR_RD_OR_$ra|             ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_RT_OR_RD_OR_$ra                     ; Multiplexer2to1 ; work         ;
-;    |PC_Register:ProgramCounter|                      ; 0 (0)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|PC_Register:ProgramCounter                              ; PC_Register     ; work         ;
-;    |ProgramMemory:ROMProgramMemory|                  ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory   ; work         ;
-;    |RegisterFile:Register_File|                      ; 57 (24)             ; 392 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File                              ; RegisterFile    ; work         ;
-;       |MUXRegisterFile:MUXRegister1|                 ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1 ; MUXRegisterFile ; work         ;
-;       |Register:Register_at|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_at         ; Register        ; work         ;
-;       |Register:Register_k1|                         ; 0 (0)               ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_k1         ; Register        ; work         ;
-;       |Register:Register_s0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s0         ; Register        ; work         ;
-;       |Register:Register_s1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s1         ; Register        ; work         ;
-;       |Register:Register_s3|                         ; 0 (0)               ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s3         ; Register        ; work         ;
-;       |Register:Register_t0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t0         ; Register        ; work         ;
-;       |Register:Register_t1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t1         ; Register        ; work         ;
-;       |Register:Register_t2|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t2         ; Register        ; work         ;
-;       |Register:Register_t3|                         ; 0 (0)               ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t3         ; Register        ; work         ;
-;       |Register:Register_t8|                         ; 0 (0)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t8         ; Register        ; work         ;
-;       |Register:Register_t9|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t9         ; Register        ; work         ;
-;       |Register:Register_v0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_v0         ; Register        ; work         ;
-;       |Register:Register_v1|                         ; 0 (0)               ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_v1         ; Register        ; work         ;
-+------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name         ; Library Name ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
+; |MIPS_Processor                                      ; 2275 (0)            ; 3072 (0)                  ; 0                 ; 0          ; 106  ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor      ; work         ;
+;    |ALU:Arithmetic_Logic_Unit|                       ; 211 (211)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit                               ; ALU                 ; work         ;
+;    |ALUControl:ArithmeticLogicUnitControl|           ; 40 (40)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALUControl:ArithmeticLogicUnitControl                   ; ALUControl          ; work         ;
+;    |Adder32bits:PC_4_Plus_ShitLeft2_SignExtend|      ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_4_Plus_ShitLeft2_SignExtend              ; Adder32bits         ; work         ;
+;    |Adder32bits:PC_Plus_4|                           ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_Plus_4                                   ; Adder32bits         ; work         ;
+;    |Control:ControlUnit|                             ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Control:ControlUnit                                     ; Control             ; work         ;
+;    |DataMemory:Memory|                               ; 1002 (1002)         ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|DataMemory:Memory                                       ; DataMemory          ; work         ;
+;    |Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR| ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR         ; Multiplexer2to1     ; work         ;
+;    |Multiplexer2to1:MUX_ForReadDataAndInmediate|     ; 294 (294)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate             ; Multiplexer2to1     ; work         ;
+;    |Multiplexer2to1:MUX_MemoryOrAlu|                 ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_MemoryOrAlu                         ; Multiplexer2to1     ; work         ;
+;    |Multiplexer2to1:MUX_PC_4_OR_BNE|                 ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_PC_4_OR_BNE                         ; Multiplexer2to1     ; work         ;
+;    |Multiplexer2to1:MUX_RT_OR_RD_OR_$ra|             ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_RT_OR_RD_OR_$ra                     ; Multiplexer2to1     ; work         ;
+;    |PC_Register:ProgramCounter|                      ; 3 (3)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|PC_Register:ProgramCounter                              ; PC_Register         ; work         ;
+;    |ProgramMemory:ROMProgramMemory|                  ; 81 (81)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory       ; work         ;
+;    |RegisterFile:Register_File|                      ; 500 (0)             ; 992 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File                              ; RegisterFile        ; work         ;
+;       |DecoderRegisterFile:Decoder|                  ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|DecoderRegisterFile:Decoder  ; DecoderRegisterFile ; work         ;
+;       |MUXRegisterFile:MUXRegister1|                 ; 367 (367)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1 ; MUXRegisterFile     ; work         ;
+;       |MUXRegisterFile:MUXRegister2|                 ; 90 (90)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister2 ; MUXRegisterFile     ; work         ;
+;       |Register:Register_a0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_a0         ; Register            ; work         ;
+;       |Register:Register_a1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_a1         ; Register            ; work         ;
+;       |Register:Register_a2|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_a2         ; Register            ; work         ;
+;       |Register:Register_a3|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_a3         ; Register            ; work         ;
+;       |Register:Register_at|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_at         ; Register            ; work         ;
+;       |Register:Register_fp|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_fp         ; Register            ; work         ;
+;       |Register:Register_gp|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_gp         ; Register            ; work         ;
+;       |Register:Register_k0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_k0         ; Register            ; work         ;
+;       |Register:Register_k1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_k1         ; Register            ; work         ;
+;       |Register:Register_ra|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_ra         ; Register            ; work         ;
+;       |Register:Register_s0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s0         ; Register            ; work         ;
+;       |Register:Register_s1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s1         ; Register            ; work         ;
+;       |Register:Register_s2|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s2         ; Register            ; work         ;
+;       |Register:Register_s3|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s3         ; Register            ; work         ;
+;       |Register:Register_s4|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s4         ; Register            ; work         ;
+;       |Register:Register_s5|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s5         ; Register            ; work         ;
+;       |Register:Register_s6|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s6         ; Register            ; work         ;
+;       |Register:Register_s7|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_s7         ; Register            ; work         ;
+;       |Register:Register_sp|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_sp         ; Register            ; work         ;
+;       |Register:Register_t0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t0         ; Register            ; work         ;
+;       |Register:Register_t1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t1         ; Register            ; work         ;
+;       |Register:Register_t2|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t2         ; Register            ; work         ;
+;       |Register:Register_t3|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t3         ; Register            ; work         ;
+;       |Register:Register_t4|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t4         ; Register            ; work         ;
+;       |Register:Register_t5|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t5         ; Register            ; work         ;
+;       |Register:Register_t6|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t6         ; Register            ; work         ;
+;       |Register:Register_t7|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t7         ; Register            ; work         ;
+;       |Register:Register_t8|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t8         ; Register            ; work         ;
+;       |Register:Register_t9|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_t9         ; Register            ; work         ;
+;       |Register:Register_v0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_v0         ; Register            ; work         ;
+;       |Register:Register_v1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_v1         ; Register            ; work         ;
++------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -319,600 +340,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Register name                                                       ; Reason for Removal                     ;
 +---------------------------------------------------------------------+----------------------------------------+
 ; RegisterFile:Register_File|Register:Register_Zero|DataOutput[0..31] ; Stuck at GND due to stuck port data_in ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s5|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s7|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_sp|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_ra|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a0|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a1|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a2|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_a3|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t4|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t5|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t6|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t7|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s4|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s6|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_gp|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_fp|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[1]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[2]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[3]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[4]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[5]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[6]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[7]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[8]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[9]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[10]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[11]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[12]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[13]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[14]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[15]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[16]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[17]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[18]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[19]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[20]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[21]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[22]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[23]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[24]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[25]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[26]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[27]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[28]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[29]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[30]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s2|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k0|DataOutput[31]      ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_s3|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_k1|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_v1|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t3|DataOutput[0]       ; Lost fanout                            ;
-; RegisterFile:Register_File|Register:Register_t8|DataOutput[0..19]   ; Lost fanout                            ;
-; PC_Register:ProgramCounter|PCValue[0,1]                             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 634                             ;                                        ;
+; Total Number of Removed Registers = 32                              ;                                        ;
 +---------------------------------------------------------------------+----------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                ;
-+-----------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; Register name                                                   ; Reason for Removal        ; Registers Removed due to This Register                                       ;
-+-----------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; RegisterFile:Register_File|Register:Register_Zero|DataOutput[0] ; Stuck at GND              ; PC_Register:ProgramCounter|PCValue[0], PC_Register:ProgramCounter|PCValue[1] ;
-;                                                                 ; due to stuck port data_in ;                                                                              ;
-+-----------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -920,12 +349,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 422   ;
+; Total registers                              ; 3072  ;
 ; Number of registers using Synchronous Clear  ; 16    ;
-; Number of registers using Synchronous Load   ; 392   ;
-; Number of registers using Asynchronous Clear ; 422   ;
+; Number of registers using Synchronous Load   ; 992   ;
+; Number of registers using Asynchronous Clear ; 1024  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 392   ;
+; Number of registers using Clock Enable       ; 3042  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -936,18 +365,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[1]                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[26]                        ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[14]                        ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1|Mux30 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[27]                        ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[8]                         ;
 ; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|ShiftLeft0                          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_RT_OR_RD_OR_$ra|MUX_Output[4]             ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux27                               ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux18                               ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_RT_OR_RD_OR_$ra|MUX_Output[1]             ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1|Mux3  ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister2|Mux30 ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux24                               ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux19                               ;
 ; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux15                               ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux31                               ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux8                                ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux0                                ;
-; 17:1               ; 32 bits   ; 352 LEs       ; 352 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate|MUX_Output[2]     ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux28                               ;
+; 33:1               ; 24 bits   ; 528 LEs       ; 528 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate|MUX_Output[21]    ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux6                                ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux2                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
@@ -956,7 +386,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+-------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                  ;
 +----------------+-------+-------------------------------------------------------+
-; MEMORY_DEPTH   ; 32    ; Signed Integer                                        ;
+; MEMORY_DEPTH   ; 256   ; Signed Integer                                        ;
 +----------------+-------+-------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -976,7 +406,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                               ;
 +----------------+-------+----------------------------------------------------+
-; MEMORY_DEPTH   ; 32    ; Signed Integer                                     ;
+; MEMORY_DEPTH   ; 256   ; Signed Integer                                     ;
 ; DATA_WIDTH     ; 32    ; Signed Integer                                     ;
 +----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -1506,29 +936,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 422                         ;
+; arriav_ff             ; 3072                        ;
 ;     CLR               ; 14                          ;
 ;     CLR SCLR          ; 16                          ;
-;     ENA CLR SLD       ; 392                         ;
-; arriav_lcell_comb     ; 556                         ;
+;     ENA               ; 2048                        ;
+;     ENA CLR           ; 2                           ;
+;     ENA CLR SLD       ; 992                         ;
+; arriav_lcell_comb     ; 2275                        ;
 ;     arith             ; 93                          ;
-;         1 data inputs ; 30                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 25                          ;
-;         5 data inputs ; 31                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 462                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 25                          ;
-;         3 data inputs ; 53                          ;
-;         4 data inputs ; 103                         ;
-;         5 data inputs ; 133                         ;
-;         6 data inputs ; 147                         ;
+;         1 data inputs ; 31                          ;
+;         4 data inputs ; 26                          ;
+;         5 data inputs ; 36                          ;
+;     extend            ; 11                          ;
+;         7 data inputs ; 11                          ;
+;     normal            ; 2171                        ;
+;         2 data inputs ; 309                         ;
+;         3 data inputs ; 108                         ;
+;         4 data inputs ; 93                          ;
+;         5 data inputs ; 190                         ;
+;         6 data inputs ; 1471                        ;
 ; boundary_port         ; 106                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 8.00                        ;
+; Max LUT depth         ; 13.00                       ;
+; Average LUT depth     ; 8.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1537,7 +967,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:14     ;
 +----------------+--------------+
 
 
@@ -1547,7 +977,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Mar 31 00:34:41 2020
+    Info: Processing started: Tue Mar 31 08:01:05 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_Processor -c MIPS_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1590,7 +1020,7 @@ Info (12127): Elaborating entity "MIPS_Processor" for the top level hierarchy
 Info (12128): Elaborating entity "Control" for hierarchy "Control:ControlUnit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 93
 Info (12128): Elaborating entity "PC_Register" for hierarchy "PC_Register:ProgramCounter" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 103
 Info (12128): Elaborating entity "ProgramMemory" for hierarchy "ProgramMemory:ROMProgramMemory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 117
-Warning (10850): Verilog HDL warning at ProgramMemory.v(34): number of words (13) in memory file does not match the number of elements in the address range [0:31] File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 34
+Warning (10850): Verilog HDL warning at ProgramMemory.v(34): number of words (60) in memory file does not match the number of elements in the address range [0:255] File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 34
 Warning (10030): Net "rom.data_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.waddr_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.we_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
@@ -1608,13 +1038,11 @@ Warning (10235): Verilog HDL Always Construct warning at ALU.v(56): variable "sh
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(58): variable "shamt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/MIPSProjects/MIPSProcessor_ver1/ALU.v Line: 58
 Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:Memory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 222
 Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:ShitLeft2_SignExtend" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 253
-Info (276014): Found 3 instances of uninferred RAM logic
+Info (276014): Found 2 instances of uninferred RAM logic
     Info (276007): RAM logic "DataMemory:Memory|ram" is uninferred due to asynchronous read logic File: C:/MIPSProjects/MIPSProcessor_ver1/DataMemory.v Line: 26
     Info (276004): RAM logic "RegisterFile:Register_File|DecoderRegisterFile:Decoder|Ram0" is uninferred due to inappropriate RAM size File: C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v Line: 20
-    Info (276004): RAM logic "ProgramMemory:ROMProgramMemory|rom" is uninferred due to inappropriate RAM size File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/MIPSProjects/MIPSProcessor_ver1/db/MIPS_Processor.ram0_ProgramMemory_93ad684.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/MIPSProjects/MIPSProcessor_ver1/db/MIPS_Processor.ram0_ProgramMemory_2093c3a2.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 600 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 8 input pin(s) that do not drive logic
@@ -1626,14 +1054,14 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "PortIn[5]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[6]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[7]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
-Info (21057): Implemented 1054 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5421 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 96 output pins
-    Info (21061): Implemented 948 logic cells
+    Info (21061): Implemented 5315 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 729 megabytes
-    Info: Processing ended: Tue Mar 31 00:35:02 2020
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 752 megabytes
+    Info: Processing ended: Tue Mar 31 08:01:35 2020
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:40
 
 
