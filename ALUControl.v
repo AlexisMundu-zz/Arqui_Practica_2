@@ -16,12 +16,17 @@ module ALUControl
 (
 	input [2:0] ALUOp,			// Viene asignado de ALUControl
 	input [5:0] ALUFunction,	// Viene directo de la ROM
-	output [3:0] ALUOperation
+	output [3:0] ALUOperation,
+	output jr						// Bandera para detectar que fue la instrucción jr
 
 );
 //
 
-							  // 9'ALUOp_FUNCT;   tipo I y J no tiene FUNCT 
+
+assign jr = {ALUOp, ALUFunction} == 9'b111_001000 ? 1'b1 : 1'b0; //Activa la bandera si es la instrucción jr
+
+
+ // 9'ALUOp_FUNCT;   tipo I y J no tiene FUNCT 
 localparam R_Type_AND    = 9'b111_100100;
 localparam R_Type_OR     = 9'b111_100101;
 localparam R_Type_NOR    = 9'b111_100111;
@@ -34,6 +39,7 @@ localparam I_Type_ADDI   = 9'b100_xxxxxx;
 localparam I_Type_ORI    = 9'b101_xxxxxx;
 localparam I_Type_ANDI	 = 9'b110_xxxxxx; 
 localparam I_Type_LUI    = 9'b011_xxxxxx;	
+
 
 reg [3:0] ALUControlValues;
 wire [8:0] Selector;

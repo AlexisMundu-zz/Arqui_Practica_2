@@ -44,6 +44,7 @@ wire ORForBranch;
 wire ALUSrc_wire;
 wire RegWrite_wire;
 wire Zero_wire;
+wire JR_wire;
 wire [2:0] ALUOp_wire;
 wire [3:0] ALUOperation_wire;
 wire [4:0] WriteRegister_wire;
@@ -66,6 +67,7 @@ wire [31:0] MUX_PC_4_OR_BEQ_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
 wire [7:0] Memory_wire;
 wire [31:0] MUX_ALU_OR_MEMORY_OR_PC_4_wire;
+wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire;
 integer ALUStatus;
 
 
@@ -189,8 +191,8 @@ ArithmeticLogicUnitControl
 (
 	.ALUOp(ALUOp_wire),
 	.ALUFunction(Instruction_wire[5:0]),
-	.ALUOperation(ALUOperation_wire)
-
+	.ALUOperation(ALUOperation_wire),
+	.jr(JR_wire)
 );
 
 
@@ -303,7 +305,7 @@ MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump
 	.MUX_Data1({16'b0, Instruction_wire[13:0], 2'b00}), //PC_4_wire[31:28], Instruction_wire[25:0], 2'b00 ser+ía si tuvieramos muchas direcciones pero 
 																		 // como el MIPS no tiene muchas entonces solo le pasamos los primeros 4 nibbles
 	
-	.MUX_Output(MUX_PC_wire) //Es el wire que se conecta para indicar el nuevo PC
+	.MUX_Output(MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire) //Es el wire que se conecta para indicar el nuevo PC
 );
 
 
@@ -334,6 +336,19 @@ MUX_ALU_OR_MEMORY_OR_PC_4
 	.MUX_Data1(PC_4_wire), 				
 	
 	.MUX_Output(MUX_ALU_OR_MEMORY_OR_PC_4_wire) 
+);
+
+Multiplexer2to1
+#(
+	.NBits(32)
+)
+MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR
+(
+	.Selector(JR_wire),
+	.MUX_Data0(MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire),	
+	.MUX_Data1(ReadData1_wire), 				
+	
+	.MUX_Output(MUX_PC_wire) 
 );
 endmodule
 

@@ -2,11 +2,18 @@
 .data
 .text
 main:
+	addi $t0, $zero, 5000
+	addi $t0, $zero, 4000
+	addi $t0, $zero, 3000
 	jal otro
-last:	addi $t0, $zero, 5000
-	add $s1, $zero, $ra
+	addi $t0, $zero, 5000
+	jal penultimo
+last:	addi $t0, $zero, 7000
+	jr $ra
+penultimo:	addi $t0, $zero, 9000
+	jal last
 	j end
 otro:
 	add $s1, $zero, $ra
-	jal last
+	jr $ra
 end:
