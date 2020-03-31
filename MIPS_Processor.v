@@ -26,7 +26,7 @@ module MIPS_Processor
 //******************************************************************/
 //******************************************************************/
 
-assign  PortOut = 0;
+// assign  PortOut = 0;
 
 //******************************************************************/
 //******************************************************************/
@@ -63,7 +63,7 @@ wire [31:0] MemoryOrAlu_wire;
 wire [31:0] BranchAddress_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
-wire [31:0] Memory_wire;
+wire [7:0] Memory_wire;
 integer ALUStatus;
 
 
@@ -209,13 +209,14 @@ assign ALUResultOut = ALUResult_wire;
 DataMemory
 Memory
 (
-	.WriteData(ReadData2_wire),
-	.Address(ALUResult_wire),
+	.WriteData(ReadData2_wire[7:0]),
+	.Address(ALUResult_wire[7:0]),
 	.MemWrite(MemWrite_wire),
 	.MemRead(MemRead_wire), 
 	.clk(clk),
 	.ReadData(Memory_wire)
 );
+
 
 
 Multiplexer2to1
@@ -226,13 +227,14 @@ MUX_MemoryOrAlu
 (
 	.Selector(MemtoReg_wire),
 	.MUX_Data0(ALUResult_wire),
-	.MUX_Data1(Memory_wire),
+	.MUX_Data1({24'b0, Memory_wire}),
 	
 	.MUX_Output(MemoryOrAlu_wire)
 
 );
 
 
+assign  PortOut = MemoryOrAlu_wire;
 
 ShiftLeft2
 ShitLeft2_SignExtend
