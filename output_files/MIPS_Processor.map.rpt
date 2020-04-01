@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_Processor
-Tue Mar 31 08:01:35 2020
+Wed Apr 01 09:56:40 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  60. Parameter Settings for User Entity Instance: Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR
  61. Port Connectivity Checks: "Multiplexer2to1:MUX_RT_OR_RD_OR_$ra"
  62. Port Connectivity Checks: "Multiplexer2to1:MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump"
- 63. Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu"
+ 63. Port Connectivity Checks: "DataMemory:Memory"
  64. Port Connectivity Checks: "RegisterFile:Register_File|Register:Register_Zero"
  65. Port Connectivity Checks: "Adder32bits:PC_Plus_4"
  66. Post-Synthesis Netlist Statistics for Top Partition
@@ -99,13 +99,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 31 08:01:35 2020       ;
+; Analysis & Synthesis Status     ; Successful - Wed Apr 01 09:56:40 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; MIPS_Processor                              ;
 ; Top-level Entity Name           ; MIPS_Processor                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 3072                                        ;
+; Total registers                 ; 9216                                        ;
 ; Total pins                      ; 106                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -219,9 +219,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -254,25 +254,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 2524      ;
+; Estimate of Logic utilization (ALMs needed) ; 6689      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2275      ;
-;     -- 7 input functions                    ; 11        ;
-;     -- 6 input functions                    ; 1471      ;
-;     -- 5 input functions                    ; 226       ;
-;     -- 4 input functions                    ; 119       ;
-;     -- <=3 input functions                  ; 448       ;
+; Combinational ALUT usage for logic          ; 4485      ;
+;     -- 7 input functions                    ; 12        ;
+;     -- 6 input functions                    ; 3649      ;
+;     -- 5 input functions                    ; 397       ;
+;     -- 4 input functions                    ; 255       ;
+;     -- <=3 input functions                  ; 172       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 3072      ;
+; Dedicated logic registers                   ; 9216      ;
 ;                                             ;           ;
 ; I/O pins                                    ; 106       ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 3072      ;
-; Total fan-out                               ; 23984     ;
-; Average fan-out                             ; 4.31      ;
+; Maximum fan-out                             ; 9216      ;
+; Total fan-out                               ; 56295     ;
+; Average fan-out                             ; 4.05      ;
 +---------------------------------------------+-----------+
 
 
@@ -281,24 +281,24 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name         ; Library Name ;
 +------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+---------------------+--------------+
-; |MIPS_Processor                                      ; 2275 (0)            ; 3072 (0)                  ; 0                 ; 0          ; 106  ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor      ; work         ;
-;    |ALU:Arithmetic_Logic_Unit|                       ; 211 (211)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit                               ; ALU                 ; work         ;
-;    |ALUControl:ArithmeticLogicUnitControl|           ; 40 (40)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALUControl:ArithmeticLogicUnitControl                   ; ALUControl          ; work         ;
+; |MIPS_Processor                                      ; 4485 (11)           ; 9216 (0)                  ; 0                 ; 0          ; 106  ; 0            ; |MIPS_Processor                                                         ; MIPS_Processor      ; work         ;
+;    |ALU:Arithmetic_Logic_Unit|                       ; 325 (325)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit                               ; ALU                 ; work         ;
+;    |ALUControl:ArithmeticLogicUnitControl|           ; 58 (58)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ALUControl:ArithmeticLogicUnitControl                   ; ALUControl          ; work         ;
 ;    |Adder32bits:PC_4_Plus_ShitLeft2_SignExtend|      ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_4_Plus_ShitLeft2_SignExtend              ; Adder32bits         ; work         ;
 ;    |Adder32bits:PC_Plus_4|                           ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Adder32bits:PC_Plus_4                                   ; Adder32bits         ; work         ;
-;    |Control:ControlUnit|                             ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Control:ControlUnit                                     ; Control             ; work         ;
-;    |DataMemory:Memory|                               ; 1002 (1002)         ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|DataMemory:Memory                                       ; DataMemory          ; work         ;
+;    |Control:ControlUnit|                             ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Control:ControlUnit                                     ; Control             ; work         ;
+;    |DataMemory:Memory|                               ; 3040 (3040)         ; 8192 (8192)               ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|DataMemory:Memory                                       ; DataMemory          ; work         ;
 ;    |Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR| ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR         ; Multiplexer2to1     ; work         ;
-;    |Multiplexer2to1:MUX_ForReadDataAndInmediate|     ; 294 (294)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate             ; Multiplexer2to1     ; work         ;
+;    |Multiplexer2to1:MUX_ForReadDataAndInmediate|     ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate             ; Multiplexer2to1     ; work         ;
 ;    |Multiplexer2to1:MUX_MemoryOrAlu|                 ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_MemoryOrAlu                         ; Multiplexer2to1     ; work         ;
 ;    |Multiplexer2to1:MUX_PC_4_OR_BNE|                 ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_PC_4_OR_BNE                         ; Multiplexer2to1     ; work         ;
 ;    |Multiplexer2to1:MUX_RT_OR_RD_OR_$ra|             ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|Multiplexer2to1:MUX_RT_OR_RD_OR_$ra                     ; Multiplexer2to1     ; work         ;
 ;    |PC_Register:ProgramCounter|                      ; 3 (3)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|PC_Register:ProgramCounter                              ; PC_Register         ; work         ;
-;    |ProgramMemory:ROMProgramMemory|                  ; 81 (81)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory       ; work         ;
-;    |RegisterFile:Register_File|                      ; 500 (0)             ; 992 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File                              ; RegisterFile        ; work         ;
-;       |DecoderRegisterFile:Decoder|                  ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|DecoderRegisterFile:Decoder  ; DecoderRegisterFile ; work         ;
-;       |MUXRegisterFile:MUXRegister1|                 ; 367 (367)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1 ; MUXRegisterFile     ; work         ;
-;       |MUXRegisterFile:MUXRegister2|                 ; 90 (90)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister2 ; MUXRegisterFile     ; work         ;
+;    |ProgramMemory:ROMProgramMemory|                  ; 73 (73)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|ProgramMemory:ROMProgramMemory                          ; ProgramMemory       ; work         ;
+;    |RegisterFile:Register_File|                      ; 794 (0)             ; 992 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File                              ; RegisterFile        ; work         ;
+;       |DecoderRegisterFile:Decoder|                  ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|DecoderRegisterFile:Decoder  ; DecoderRegisterFile ; work         ;
+;       |MUXRegisterFile:MUXRegister1|                 ; 363 (363)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1 ; MUXRegisterFile     ; work         ;
+;       |MUXRegisterFile:MUXRegister2|                 ; 390 (390)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister2 ; MUXRegisterFile     ; work         ;
 ;       |Register:Register_a0|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_a0         ; Register            ; work         ;
 ;       |Register:Register_a1|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_a1         ; Register            ; work         ;
 ;       |Register:Register_a2|                         ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_Processor|RegisterFile:Register_File|Register:Register_a2         ; Register            ; work         ;
@@ -349,12 +349,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3072  ;
+; Total registers                              ; 9216  ;
 ; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 992   ;
 ; Number of registers using Asynchronous Clear ; 1024  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3042  ;
+; Number of registers using Clock Enable       ; 9186  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -365,19 +365,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[1]                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[27]                        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[30]                        ;
 ; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |MIPS_Processor|PC_Register:ProgramCounter|PCValue[8]                         ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|ShiftLeft0                          ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_RT_OR_RD_OR_$ra|MUX_Output[1]             ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1|Mux3  ;
-; 32:1               ; 8 bits    ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister2|Mux30 ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux24                               ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux19                               ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux15                               ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux28                               ;
-; 33:1               ; 24 bits   ; 528 LEs       ; 528 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_ForReadDataAndInmediate|MUX_Output[21]    ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux6                                ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux2                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|ShiftRight0                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|ShiftLeft0                          ;
+; 4:1                ; 34 bits   ; 68 LEs        ; 68 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|ShiftRight0                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |MIPS_Processor|Multiplexer2to1:MUX_RT_OR_RD_OR_$ra|MUX_Output[4]             ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister1|Mux19 ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |MIPS_Processor|RegisterFile:Register_File|MUXRegisterFile:MUXRegister2|Mux8  ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux16                               ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 80 LEs               ; 48 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux27                               ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 40 LEs               ; 24 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux29                               ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux14                               ;
+; 20:1               ; 8 bits    ; 104 LEs       ; 80 LEs               ; 24 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux11                               ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 40 LEs               ; 12 LEs                 ; No         ; |MIPS_Processor|ALU:Arithmetic_Logic_Unit|Mux3                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
@@ -797,8 +798,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------------+
 ; Parameter Name ; Value ; Type                                  ;
 +----------------+-------+---------------------------------------+
-; DATA_WIDTH     ; 8     ; Signed Integer                        ;
-; MEMORY_DEPTH   ; 1024  ; Signed Integer                        ;
+; DATA_WIDTH     ; 32    ; Signed Integer                        ;
+; MEMORY_DEPTH   ; 256   ; Signed Integer                        ;
 +----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -902,13 +903,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+-------+----------+-------------------------------------+
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplexer2to1:MUX_MemoryOrAlu" ;
-+------------------+-------+----------+-----------------------+
-; Port             ; Type  ; Severity ; Details               ;
-+------------------+-------+----------+-----------------------+
-; MUX_Data1[31..8] ; Input ; Info     ; Stuck at GND          ;
-+------------------+-------+----------+-----------------------+
++---------------------------------------------------+
+; Port Connectivity Checks: "DataMemory:Memory"     ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; Address[31..30] ; Input ; Info     ; Stuck at GND ;
++-----------------+-------+----------+--------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -936,29 +937,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 3072                        ;
+; arriav_ff             ; 9216                        ;
 ;     CLR               ; 14                          ;
 ;     CLR SCLR          ; 16                          ;
-;     ENA               ; 2048                        ;
+;     ENA               ; 8192                        ;
 ;     ENA CLR           ; 2                           ;
 ;     ENA CLR SLD       ; 992                         ;
-; arriav_lcell_comb     ; 2275                        ;
-;     arith             ; 93                          ;
-;         1 data inputs ; 31                          ;
-;         4 data inputs ; 26                          ;
-;         5 data inputs ; 36                          ;
-;     extend            ; 11                          ;
-;         7 data inputs ; 11                          ;
-;     normal            ; 2171                        ;
-;         2 data inputs ; 309                         ;
-;         3 data inputs ; 108                         ;
-;         4 data inputs ; 93                          ;
-;         5 data inputs ; 190                         ;
-;         6 data inputs ; 1471                        ;
+; arriav_lcell_comb     ; 4485                        ;
+;     arith             ; 104                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 33                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 29                          ;
+;         5 data inputs ; 32                          ;
+;     extend            ; 12                          ;
+;         7 data inputs ; 12                          ;
+;     normal            ; 4369                        ;
+;         2 data inputs ; 71                          ;
+;         3 data inputs ; 58                          ;
+;         4 data inputs ; 226                         ;
+;         5 data inputs ; 365                         ;
+;         6 data inputs ; 3649                        ;
 ; boundary_port         ; 106                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.00                       ;
-; Average LUT depth     ; 8.56                        ;
+; Max LUT depth         ; 15.70                       ;
+; Average LUT depth     ; 8.70                        ;
 +-----------------------+-----------------------------+
 
 
@@ -967,7 +971,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:14     ;
+; Top            ; 00:00:17     ;
 +----------------+--------------+
 
 
@@ -977,7 +981,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Mar 31 08:01:05 2020
+    Info: Processing started: Wed Apr 01 09:56:09 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_Processor -c MIPS_Processor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1020,7 +1024,7 @@ Info (12127): Elaborating entity "MIPS_Processor" for the top level hierarchy
 Info (12128): Elaborating entity "Control" for hierarchy "Control:ControlUnit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 93
 Info (12128): Elaborating entity "PC_Register" for hierarchy "PC_Register:ProgramCounter" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 103
 Info (12128): Elaborating entity "ProgramMemory" for hierarchy "ProgramMemory:ROMProgramMemory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 117
-Warning (10850): Verilog HDL warning at ProgramMemory.v(34): number of words (60) in memory file does not match the number of elements in the address range [0:255] File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 34
+Warning (10850): Verilog HDL warning at ProgramMemory.v(34): number of words (65) in memory file does not match the number of elements in the address range [0:255] File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 34
 Warning (10030): Net "rom.data_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.waddr_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
 Warning (10030): Net "rom.we_a" at ProgramMemory.v(30) has no driver or initial value, using a default initial value '0' File: C:/MIPSProjects/MIPSProcessor_ver1/ProgramMemory.v Line: 30
@@ -1036,8 +1040,8 @@ Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:Arithmet
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic_Logic_Unit" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 209
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(56): variable "shamt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/MIPSProjects/MIPSProcessor_ver1/ALU.v Line: 56
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(58): variable "shamt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/MIPSProjects/MIPSProcessor_ver1/ALU.v Line: 58
-Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:Memory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 222
-Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:ShitLeft2_SignExtend" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 253
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:Memory" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 226
+Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:ShitLeft2_SignExtend" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 257
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276007): RAM logic "DataMemory:Memory|ram" is uninferred due to asynchronous read logic File: C:/MIPSProjects/MIPSProcessor_ver1/DataMemory.v Line: 26
     Info (276004): RAM logic "RegisterFile:Register_File|DecoderRegisterFile:Decoder|Ram0" is uninferred due to inappropriate RAM size File: C:/MIPSProjects/MIPSProcessor_ver1/DecoderRegisterFile.v Line: 20
@@ -1054,14 +1058,14 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "PortIn[5]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[6]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
     Warning (15610): No output dependent on input pin "PortIn[7]" File: C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v Line: 20
-Info (21057): Implemented 5421 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 13775 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 96 output pins
-    Info (21061): Implemented 5315 logic cells
+    Info (21061): Implemented 13669 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 752 megabytes
-    Info: Processing ended: Tue Mar 31 08:01:35 2020
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Peak virtual memory: 791 megabytes
+    Info: Processing ended: Wed Apr 01 09:56:40 2020
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:45
 
 

@@ -65,7 +65,7 @@ wire [31:0] MemoryOrAlu_wire;
 wire [31:0] BranchAddress_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
-wire [7:0] Memory_wire;
+wire [31:0] Memory_wire;
 wire [31:0] MUX_ALU_OR_MEMORY_OR_PC_4_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump_wire;
 integer ALUStatus;
@@ -211,10 +211,14 @@ Arithmetic_Logic_Unit
 assign ALUResultOut = ALUResult_wire;
 
 DataMemory
+#(
+	.DATA_WIDTH(32),
+	.MEMORY_DEPTH(MEMORY_DEPTH)
+)
 Memory
 (
-	.WriteData(ReadData2_wire[7:0]),
-	.Address(ALUResult_wire[7:0]),
+	.WriteData(ReadData2_wire),
+	.Address((ALUResult_wire - 32'h10010000) >> 2 ), //Se debe restar 10010000 para que inicie en la dirección 0 ya que no tenemos MEMORY_DEPTH suficiente para 32 bits
 	.MemWrite(MemWrite_wire),
 	.MemRead(MemRead_wire), 
 	.clk(clk),
@@ -231,7 +235,7 @@ MUX_MemoryOrAlu
 (
 	.Selector(MemtoReg_wire),
 	.MUX_Data0(ALUResult_wire),
-	.MUX_Data1({24'b0, Memory_wire}),
+	.MUX_Data1(Memory_wire),
 	
 	.MUX_Output(MemoryOrAlu_wire)
 
