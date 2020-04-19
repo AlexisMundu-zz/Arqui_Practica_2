@@ -52,6 +52,7 @@ wire [4:0] MUX_RT_OR_RD_wire;
 wire [31:0] MUX_PC_wire;
 wire [31:0] PC_wire;
 wire [31:0] Instruction_wire;
+wire [31:0] Instruction_register_in_wire;
 wire [31:0] ReadData1_wire;
 wire [31:0] ReadData2_wire;
 wire [31:0] InmmediateExtend_wire;
@@ -59,6 +60,7 @@ wire [31:0] ShitLeft2_SignExtend_wire;
 wire [31:0] ReadData2OrInmmediate_wire;
 wire [31:0] ALUResult_wire;
 wire [31:0] PC_4_wire;
+wire [31:0] PC_4_register_in_wire;
 wire [31:0] InmmediateExtendAnded_wire;
 wire [31:0] PCtoBranch_wire;
 wire [31:0] MemoryOrAlu_wire;
@@ -112,7 +114,7 @@ ProgramMemory
 ROMProgramMemory
 (
 	.Address(PC_wire),
-	.Instruction(Instruction_wire)
+	.Instruction(Instruction_register_in_wire)
 );
 
 Adder32bits
@@ -121,7 +123,7 @@ PC_Plus_4
 	.Data0(PC_wire),
 	.Data1(4),
 	
-	.Result(PC_4_wire)
+	.Result(PC_4_register_in_wire)
 );
 
 
@@ -337,6 +339,18 @@ MUX_ALU_OR_MEMORY_OR_PC_4_OR_JR
 	.MUX_Data1(ReadData1_wire), 				
 	
 	.MUX_Output(MUX_PC_wire) 
+);
+
+
+Register_IF_ID
+Register_IF_ID
+(
+	.clk(clk),
+	.reset(reset),
+	.PC_4(PC_4_register_in_wire),
+	.Instruction(Instruction_register_in_wire),
+	.PC_4_out(PC_4_wire),
+	.Instruction_out(Instruction_wire)
 );
 endmodule
 

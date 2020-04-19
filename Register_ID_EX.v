@@ -36,11 +36,11 @@ module Register_ID_EX
 	input MemWrite,
 	input ALUSrc,
 	input RegWrite,
-	input [2:0]ALUOp
+	input [2:0]ALUOp,
 	
 	
 	output reg [N-1:0] PC_4_out,
-	output reg [N-1:0] Data_1_out
+	output reg [N-1:0] Data_1_out,
 	output reg [N-1:0] Data_2_out,
 	output reg [N-1:0] Sign_extended_out,
 	output reg [4:0] Rt_out,
@@ -85,7 +85,7 @@ always@(negedge reset or negedge clk) begin
 		begin
 			PC_4_out <= PC_4;
 			Data_1_out <= Data_1;
-			Data_2_out <= Data_2,
+			Data_2_out <= Data_2;
 			Sign_extended_out <= Sign_extended;
 			Rt_out <= Rt;
 			Rd_out <= Rd;

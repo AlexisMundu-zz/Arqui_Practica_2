@@ -12,14 +12,14 @@
 *	19/04/2020
 ******************************************************************/
 
-module Register_EX_MEM
+module Register_MEM_WB
 #(
 	parameter N=32
 )
 (
 	input clk,
 	input reset,
-	input [N-1:0] ALU_result_out,
+	input [N-1:0] ALU_result,
 	input [N-1:0] Read_data,
 	input [4:0] WriteRegister, 	
 	//Control
