@@ -12,91 +12,76 @@
 *	19/04/2020
 ******************************************************************/
 
-module Register_ID_EX
+module Register_EX_MEM
 #(
 	parameter N=32
 )
 (
 	input clk,
 	input reset,
-	input	[N-1:0] PC_4,
-	input [N-1:0] Data_1,
+	input Zero,
+	input [N-1:0] ALU_result,
 	input [N-1:0] Data_2,
-	input [N-1:0] Sign_extended,
-	input [4:0] Rt, 	//[20-16]
-	input [4:0] Rd,	//[15-11]
+	input [N-1:0] Jump_address,
+	input	[N-1:0] Branch_adress,
+	input [4:0] Reg, 	
 	//Control
 	input Jump,
-	input RegDst,
 	input BranchEQ,
 	input BranchNE,
 	input MemRead,
-	input MemtoReg,
 	input MemWrite,
-	input ALUSrc,
+	input MemtoReg,
 	input RegWrite,
-	input [2:0]ALUOp
 	
 	
-	output reg [N-1:0] PC_4_out,
-	output reg [N-1:0] Data_1_out
+	output reg [N-1:0] ALU_result_out,
 	output reg [N-1:0] Data_2_out,
-	output reg [N-1:0] Sign_extended_out,
-	output reg [4:0] Rt_out,
-	output reg [4:0] Rd_out,
+	output reg [N-1:0] Jump_address_out,
+	output reg	[N-1:0] Branch_adress_out,
+	output reg [4:0] Reg_out, 	
 	//Control
 	output reg Jump_out,
-	output reg RegDst_out,
 	output reg BranchEQ_out,
 	output reg BranchNE_out,
 	output reg MemRead_out,
-	output reg MemtoReg_out,
 	output reg MemWrite_out,
-	output reg ALUSrc_out,
-	output reg RegWrite_out,
-	output reg [2:0]ALUOp_out
+	output reg MemtoReg_out,
+	output reg RegWrite_out
 );
 
 always@(negedge reset or negedge clk) begin
 	if(reset==0)
 		begin
-			PC_4_out <= 0;
-			Data_1_out <= 0;
+			ALU_result_out <= 0;
 			Data_2_out <= 0;
-			Sign_extended_out <= 0;
-			Rt_out <= 0;
-			Rd_out <= 0;
+			Jump_address_out <= 0;
+			Branch_adress_out <= 0;
+			Reg_out <= 0;
 			//Control
 			Jump_out <= 0;
-			RegDst_out <= 0;
 			BranchEQ_out <= 0;
 			BranchNE_out <= 0;
 			MemRead_out <= 0;
 			MemtoReg_out <= 0;
 			MemWrite_out <= 0;
-			ALUSrc_out <= 0;
 			RegWrite_out <= 0;
-			ALUOp_out <= 0;
 		end
 	else	
 		begin
-			PC_4_out <= PC_4;
-			Data_1_out <= Data_1;
-			Data_2_out <= Data_2,
-			Sign_extended_out <= Sign_extended;
-			Rt_out <= Rt;
-			Rd_out <= Rd;
+			ALU_result_out <= ALU_result_out;
+			Data_2_out <= Data_2;
+			Jump_address_out <= Jump_address;
+			Branch_adress_out <= Branch_adress;
+			Reg_out <= Reg;
 			//Control
 			Jump_out <= Jump;
-			RegDst_out <= RegDst;
 			BranchEQ_out <= BranchEQ;
 			BranchNE_out <= BranchNE;
 			MemRead_out <= MemRead;
 			MemtoReg_out <= MemtoReg;
 			MemWrite_out <= MemWrite;
-			ALUSrc_out <= ALUSrc;
 			RegWrite_out <= RegWrite;
-			ALUOp_out <= ALUOp;
 		end
 end
 

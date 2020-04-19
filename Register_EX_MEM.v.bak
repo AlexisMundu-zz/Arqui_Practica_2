@@ -62,41 +62,41 @@ always@(negedge reset or negedge clk) begin
 		begin
 			PC_4_out <= 0;
 			Data_1_out <= 0;
-			Data_2_out <= 0;
-			Sign_extended_out <= 0;
-			Rt_out <= 0;
-			Rd_out <= 0;
+			Data_2_out <= 0,
+			Sign_extended_out <= 0,
+			Rt_out <= 0,
+			Rd_out <= 0,
 			//Control
-			Jump_out <= 0;
-			RegDst_out <= 0;
-			BranchEQ_out <= 0;
-			BranchNE_out <= 0;
-			MemRead_out <= 0;
-			MemtoReg_out <= 0;
-			MemWrite_out <= 0;
-			ALUSrc_out <= 0;
-			RegWrite_out <= 0;
-			ALUOp_out <= 0;
+			Jump_out <= 0,
+			RegDst_out <= 0,
+			BranchEQ_out <= 0,
+			BranchNE_out <= 0,
+			MemRead_out <= 0,
+			MemtoReg_out <= 0,
+			MemWrite_out <= 0,
+			ALUSrc_out <= 0,
+			RegWrite_out <= 0,
+			ALUOp_out <= 0
 		end
 	else	
 		begin
 			PC_4_out <= PC_4;
 			Data_1_out <= Data_1;
 			Data_2_out <= Data_2,
-			Sign_extended_out <= Sign_extended;
-			Rt_out <= Rt;
-			Rd_out <= Rd;
+			Sign_extended_out <= Sign_extended,
+			Rt_out <= Rt,
+			Rd_out <= Rd,
 			//Control
-			Jump_out <= Jump;
-			RegDst_out <= RegDst;
-			BranchEQ_out <= BranchEQ;
-			BranchNE_out <= BranchNE;
-			MemRead_out <= MemRead;
-			MemtoReg_out <= MemtoReg;
-			MemWrite_out <= MemWrite;
-			ALUSrc_out <= ALUSrc;
-			RegWrite_out <= RegWrite;
-			ALUOp_out <= ALUOp;
+			Jump_out <= Jump,
+			RegDst_out <= RegDst,
+			BranchEQ_out <= BranchEQ,
+			BranchNE_out <= BranchNE,
+			MemRead_out <= MemRead,
+			MemtoReg_out <= MemtoReg,
+			MemWrite_out <= MemWrite,
+			ALUSrc_out <= ALUSrc,
+			RegWrite_out <= RegWrite,
+			ALUOp_out <= ALUOp
 		end
 end
 
