@@ -63,7 +63,6 @@ wire [31:0] InmmediateExtendAnded_wire;
 wire [31:0] PCtoBranch_wire;
 wire [31:0] MemoryOrAlu_wire;
 wire [31:0] BranchAddress_wire;
-wire [31:0] MUX_PC_4_OR_BEQ_wire;
 wire [31:0] MUX_PC_4_OR_BEQ_OR_BNE_wire;
 wire [31:0] Memory_wire;
 wire [31:0] MUX_ALU_OR_MEMORY_OR_PC_4_wire;
@@ -271,25 +270,10 @@ Multiplexer2to1
 #(
 	.NBits(32)
 )
-MUX_PC_4_OR_BEQ
+MUX_PC_4_OR_BEQ_OR_BNE
 (
-	.Selector(BranchEQ_wire & Zero_wire),
+	.Selector((BranchEQ_wire & Zero_wire) | (BranchNE_wire & (!Zero_wire))),
 	.MUX_Data0(PC_4_wire),
-	.MUX_Data1(BranchAddress_wire),
-	
-	.MUX_Output(MUX_PC_4_OR_BEQ_wire)
-
-);
-
-
-Multiplexer2to1
-#(
-	.NBits(32)
-)
-MUX_PC_4_OR_BNE
-(
-	.Selector(BranchNE_wire & (!Zero_wire)),
-	.MUX_Data0(MUX_PC_4_OR_BEQ_wire),
 	.MUX_Data1(BranchAddress_wire),
 	
 	.MUX_Output(MUX_PC_4_OR_BEQ_OR_BNE_wire)
