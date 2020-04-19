@@ -1,6 +1,6 @@
 /******************************************************************
 * Description
-*	This is a register that corresponds to the EX/MEM. 
+*	This is a register that corresponds to the MEM/WB. 
 *	This register does not have an enable signal.
 * Version:
 *	1.0
@@ -19,18 +19,10 @@ module Register_EX_MEM
 (
 	input clk,
 	input reset,
-	input Zero,
-	input [N-1:0] ALU_result,
+	input [N-1:0] Read_data,
 	input [N-1:0] Data_2,
-	input [N-1:0] Jump_address,
-	input	[N-1:0] Branch_adress,
 	input [4:0] WriteRegister, 	
 	//Control
-	input Jump,
-	input BranchEQ,
-	input BranchNE,
-	input MemRead,
-	input MemWrite,
 	input MemtoReg,
 	input RegWrite,
 	
@@ -69,7 +61,7 @@ always@(negedge reset or negedge clk) begin
 		end
 	else	
 		begin
-			ALU_result_out <= ALU_result;
+			ALU_result_out <= ALU_result_out;
 			Data_2_out <= Data_2;
 			Jump_address_out <= Jump_address;
 			Branch_adress_out <= Branch_adress;
