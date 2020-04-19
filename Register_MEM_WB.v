@@ -21,7 +21,8 @@ module Register_MEM_WB
 	input reset,
 	input [N-1:0] ALU_result,
 	input [N-1:0] Read_data,
-	input [4:0] WriteRegister, 	
+	input [4:0] WriteRegister,
+	input [N-1:0] PC_4,
 	//Control
 	input MemtoReg,
 	input RegWrite,
@@ -29,7 +30,8 @@ module Register_MEM_WB
 	
 	output reg [N-1:0] ALU_result_out,
 	output reg [N-1:0] Read_data_out,
-	output reg [4:0] WriteRegister_out, 	
+	output reg [4:0] WriteRegister_out,
+	output reg [N-1:0] PC_4_out, 	
 	//Control
 	output reg MemtoReg_out,
 	output reg RegWrite_out
@@ -41,6 +43,7 @@ always@(negedge reset or negedge clk) begin
 			ALU_result_out <= 0;
 			Read_data_out <= 0;
 			WriteRegister_out <= 0;
+			PC_4_out <= 0;
 			//Control
 			MemtoReg_out <= 0;
 			RegWrite_out <= 0;
@@ -50,6 +53,7 @@ always@(negedge reset or negedge clk) begin
 			ALU_result_out <= ALU_result;
 			Read_data_out <= Read_data;
 			WriteRegister_out <= WriteRegister;
+			PC_4_out <= PC_4;
 			//Control
 			MemtoReg_out <= MemtoReg;
 			RegWrite_out <= RegWrite;

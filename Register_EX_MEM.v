@@ -24,7 +24,8 @@ module Register_EX_MEM
 	input [N-1:0] Data_2,
 	input [N-1:0] Jump_address,
 	input	[N-1:0] Branch_adress,
-	input [4:0] WriteRegister, 	
+	input [4:0] WriteRegister,
+	input [N-1:0] PC_4, 	
 	//Control
 	input Jump,
 	input BranchEQ,
@@ -39,7 +40,8 @@ module Register_EX_MEM
 	output reg [N-1:0] Data_2_out,
 	output reg [N-1:0] Jump_address_out,
 	output reg	[N-1:0] Branch_adress_out,
-	output reg [4:0] WriteRegister_out, 	
+	output reg [4:0] WriteRegister_out,
+	output reg [N-1:0] PC_4_out, 	
 	//Control
 	output reg Jump_out,
 	output reg BranchEQ_out,
@@ -58,6 +60,7 @@ always@(negedge reset or negedge clk) begin
 			Jump_address_out <= 0;
 			Branch_adress_out <= 0;
 			WriteRegister_out <= 0;
+			PC_4_out <= 0;
 			//Control
 			Jump_out <= 0;
 			BranchEQ_out <= 0;
@@ -74,6 +77,7 @@ always@(negedge reset or negedge clk) begin
 			Jump_address_out <= Jump_address;
 			Branch_adress_out <= Branch_adress;
 			WriteRegister_out <= WriteRegister;
+			PC_4_out <= PC_4;
 			//Control
 			Jump_out <= Jump;
 			BranchEQ_out <= BranchEQ;
