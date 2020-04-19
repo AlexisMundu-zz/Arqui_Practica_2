@@ -25,6 +25,7 @@ module Register_ID_EX
 	input [N-1:0] Sign_extended,
 	input [4:0] Rt, 	//[20-16]
 	input [4:0] Rd,	//[15-11]
+	input [25:0] Address,
 	//Control
 	input Jump,
 	input RegDst,
@@ -44,6 +45,7 @@ module Register_ID_EX
 	output reg [N-1:0] Sign_extended_out,
 	output reg [4:0] Rt_out,
 	output reg [4:0] Rd_out,
+	output reg [25:0] Address_out,
 	//Control
 	output reg Jump_out,
 	output reg RegDst_out,
@@ -66,6 +68,7 @@ always@(negedge reset or negedge clk) begin
 			Sign_extended_out <= 0;
 			Rt_out <= 0;
 			Rd_out <= 0;
+			Address_out <= 0;
 			//Control
 			Jump_out <= 0;
 			RegDst_out <= 0;
@@ -86,6 +89,7 @@ always@(negedge reset or negedge clk) begin
 			Sign_extended_out <= Sign_extended;
 			Rt_out <= Rt;
 			Rd_out <= Rd;
+			Address_out <= Address;
 			//Control
 			Jump_out <= Jump;
 			RegDst_out <= RegDst;
