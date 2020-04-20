@@ -54,7 +54,7 @@ module Register_ID_EX
 	output reg RegWrite_out,
 	output reg [2:0]ALUOp_out,
 	
-	input  [N-1:0] Instruction_out
+	output reg [N-1:0] Instruction_out
 );
 
 always@(negedge reset or negedge clk) begin

@@ -36,8 +36,10 @@ module Register_EX_MEM
 	input RegWrite,
 	
 	input JR,
+	input [N-1:0] RA_address, 
 	
 	
+	output reg Zero_out,
 	output reg [N-1:0] ALU_result_out,
 	output reg [N-1:0] Data_2_out,
 	output reg [N-1:0] Jump_address_out,
@@ -53,12 +55,14 @@ module Register_EX_MEM
 	output reg MemtoReg_out,
 	output reg RegWrite_out,
 	
-	output reg JR_out
+	output reg JR_out,
+	output reg [N-1:0] RA_address_out
 );
 
 always@(negedge reset or negedge clk) begin
 	if(reset==0)
 		begin
+			Zero_out <= 0;
 			ALU_result_out <= 0;
 			Data_2_out <= 0;
 			Jump_address_out <= 0;
@@ -74,9 +78,11 @@ always@(negedge reset or negedge clk) begin
 			MemWrite_out <= 0;
 			RegWrite_out <= 0;
 			JR_out <= 0;
+			RA_address_out <= 0;
 		end
 	else	
 		begin
+			Zero_out <= Zero;
 			ALU_result_out <= ALU_result;
 			Data_2_out <= Data_2;
 			Jump_address_out <= Jump_address;
@@ -92,6 +98,7 @@ always@(negedge reset or negedge clk) begin
 			MemWrite_out <= MemWrite;
 			RegWrite_out <= RegWrite;
 			JR_out <= JR;
+			RA_address_out <= RA_address;
 		end
 end
 
