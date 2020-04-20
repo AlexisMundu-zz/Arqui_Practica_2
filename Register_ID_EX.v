@@ -23,9 +23,6 @@ module Register_ID_EX
 	input [N-1:0] Data_1,
 	input [N-1:0] Data_2,
 	input [N-1:0] Sign_extended,
-	input [4:0] Rt, 	//[20-16]
-	input [4:0] Rd,	//[15-11]
-	input [25:0] Address,
 	//Control
 	input Jump,
 	input RegDst,
@@ -38,14 +35,13 @@ module Register_ID_EX
 	input RegWrite,
 	input [2:0]ALUOp,
 	
+	input  [N-1:0] Instruction,
+	
 	
 	output reg [N-1:0] PC_4_out,
 	output reg [N-1:0] Data_1_out,
 	output reg [N-1:0] Data_2_out,
 	output reg [N-1:0] Sign_extended_out,
-	output reg [4:0] Rt_out,
-	output reg [4:0] Rd_out,
-	output reg [25:0] Address_out,
 	//Control
 	output reg Jump_out,
 	output reg RegDst_out,
@@ -56,7 +52,9 @@ module Register_ID_EX
 	output reg MemWrite_out,
 	output reg ALUSrc_out,
 	output reg RegWrite_out,
-	output reg [2:0]ALUOp_out
+	output reg [2:0]ALUOp_out,
+	
+	input  [N-1:0] Instruction_out
 );
 
 always@(negedge reset or negedge clk) begin
@@ -66,9 +64,6 @@ always@(negedge reset or negedge clk) begin
 			Data_1_out <= 0;
 			Data_2_out <= 0;
 			Sign_extended_out <= 0;
-			Rt_out <= 0;
-			Rd_out <= 0;
-			Address_out <= 0;
 			//Control
 			Jump_out <= 0;
 			RegDst_out <= 0;
@@ -80,6 +75,8 @@ always@(negedge reset or negedge clk) begin
 			ALUSrc_out <= 0;
 			RegWrite_out <= 0;
 			ALUOp_out <= 0;
+			
+			Instruction_out <= 0;
 		end
 	else	
 		begin
@@ -87,9 +84,6 @@ always@(negedge reset or negedge clk) begin
 			Data_1_out <= Data_1;
 			Data_2_out <= Data_2;
 			Sign_extended_out <= Sign_extended;
-			Rt_out <= Rt;
-			Rd_out <= Rd;
-			Address_out <= Address;
 			//Control
 			Jump_out <= Jump;
 			RegDst_out <= RegDst;
@@ -101,6 +95,8 @@ always@(negedge reset or negedge clk) begin
 			ALUSrc_out <= ALUSrc;
 			RegWrite_out <= RegWrite;
 			ALUOp_out <= ALUOp;
+			
+			Instruction_out <= Instruction;
 		end
 end
 

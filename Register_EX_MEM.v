@@ -35,6 +35,8 @@ module Register_EX_MEM
 	input MemtoReg,
 	input RegWrite,
 	
+	input JR,
+	
 	
 	output reg [N-1:0] ALU_result_out,
 	output reg [N-1:0] Data_2_out,
@@ -49,7 +51,9 @@ module Register_EX_MEM
 	output reg MemRead_out,
 	output reg MemWrite_out,
 	output reg MemtoReg_out,
-	output reg RegWrite_out
+	output reg RegWrite_out,
+	
+	output reg JR_out
 );
 
 always@(negedge reset or negedge clk) begin
@@ -69,6 +73,7 @@ always@(negedge reset or negedge clk) begin
 			MemtoReg_out <= 0;
 			MemWrite_out <= 0;
 			RegWrite_out <= 0;
+			JR_out <= 0;
 		end
 	else	
 		begin
@@ -86,6 +91,7 @@ always@(negedge reset or negedge clk) begin
 			MemtoReg_out <= MemtoReg;
 			MemWrite_out <= MemWrite;
 			RegWrite_out <= RegWrite;
+			JR_out <= JR;
 		end
 end
 
