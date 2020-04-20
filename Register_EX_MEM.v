@@ -59,7 +59,7 @@ module Register_EX_MEM
 	output reg [N-1:0] RA_address_out
 );
 
-always@(negedge reset or negedge clk) begin
+always@(negedge reset or posedge clk) begin
 	if(reset==0)
 		begin
 			Zero_out <= 0;

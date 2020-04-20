@@ -346,7 +346,7 @@ Multiplexer2to1
 MUX_PC_4_OR_BEQ_OR_BNE
 (
 	.Selector((BranchEQ_wire & Zero_wire) | (BranchNE_wire & (!Zero_wire))),
-	.MUX_Data0(PC_4_register_MEM_WB_wire),
+	.MUX_Data0(PC_4_wire),
 	.MUX_Data1(BranchAddress_wire),
 	
 	.MUX_Output(MUX_PC_4_OR_BEQ_OR_BNE_wire)
@@ -394,7 +394,7 @@ MUX_ALU_OR_MEMORY_OR_PC_4
 (
 	.Selector(Jump_wire),
 	.MUX_Data0(MemoryOrAlu_wire),	
-	.MUX_Data1(PC_4_wire), 				
+	.MUX_Data1(PC_4_register_MEM_WB_out_wire), 				
 	
 	.MUX_Output(MUX_ALU_OR_MEMORY_OR_PC_4_wire) 
 );

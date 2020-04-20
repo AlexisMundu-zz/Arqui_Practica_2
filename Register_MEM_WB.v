@@ -37,7 +37,7 @@ module Register_MEM_WB
 	output reg RegWrite_out
 );
 
-always@(negedge reset or negedge clk) begin
+always@(negedge reset or posedge clk) begin
 	if(reset==0)
 		begin
 			ALU_result_out <= 0;

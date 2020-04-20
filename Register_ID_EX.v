@@ -57,7 +57,7 @@ module Register_ID_EX
 	output reg [N-1:0] Instruction_out
 );
 
-always@(negedge reset or negedge clk) begin
+always@(negedge reset or posedge clk) begin
 	if(reset==0)
 		begin
 			PC_4_out <= 0;
