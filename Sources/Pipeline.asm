@@ -13,7 +13,7 @@
 	add $zero, $zero, $zero
 	add $zero, $zero, $zero
 	addi $t2, $t1, 3
-	addi $t3, $t3, 0x010010000
+	lui $t3, 0x00001001
 	add $zero, $zero, $zero
 	add $zero, $zero, $zero
 	add $zero, $zero, $zero
@@ -24,7 +24,10 @@
 	add $zero, $zero, $zero
 	add $zero, $zero, $zero
 	sub $s1, $s0, $t3
-	lw $t2, 0($t3)
+	lw $t2, 0($t3)	
+	add $zero, $zero, $zero
+	add $zero, $zero, $zero
+	add $zero, $zero, $zero
 	addi $s2, $t2, -2
 	add $zero, $zero, $zero
 	add $zero, $zero, $zero
