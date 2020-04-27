@@ -142,6 +142,7 @@ wire [1:0] ForwardA_wire;
 wire [1:0] ForwardB_wire;
 
 wire [31:0] MUX_Data1_or_MemoryOrAlu_wire;
+wire [31:0] MUX_ReadData1_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM_wire;
 
 integer ALUStatus;
 
@@ -277,7 +278,7 @@ Multiplexer2to1
 #(
 	.NBits(32)
 )
-MUX_ReadData1_or_MemoryOrAlu
+MUX_ReadData1_or_MemoryOrAlu_MEM_WB
 (
 	.Selector(ForwardA_wire[0]),
 	.MUX_Data0(ReadData1_wire),
@@ -287,12 +288,26 @@ MUX_ReadData1_or_MemoryOrAlu
 
 );
 
+Multiplexer2to1
+#(
+	.NBits(32)
+)
+MUX_ReadData1_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM
+(
+	.Selector(ForwardA_wire[1]),
+	.MUX_Data0(MUX_Data1_or_MemoryOrAlu_wire),
+	.MUX_Data1(ALUResult_register_MEM_WB_in_wire),
+	
+	.MUX_Output(MUX_ReadData1_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM_wire)
+
+);
+
 
 ALU
 Arithmetic_Logic_Unit 
 (
 	.ALUOperation(ALUOperation_wire),
-	.A(ReadData1_wire),
+	.A(MUX_ReadData1_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM_wire),
 	.B(ReadData2OrInmmediate_wire),
 	.shamt(Instruction_register_ID_EX_out_wire[10:6]),
 	.Zero(Zero_register_EX_MEM_wire),
