@@ -138,6 +138,9 @@ wire [31:0] Jump_address_register_EX_MEM_in_wire;
 
 wire [31:0] RA_address_wire;
 
+wire [1:0] ForwardA_wire;
+wire [1:0] ForwardB_wire;
+
 integer ALUStatus;
 
 
@@ -540,7 +543,20 @@ Register_MEM_WB
 /////////////////////////////////////////////////
 ///////////// FORWARDING UNIT ///////////////////
 /////////////////////////////////////////////////
+ForwardingUnit
+ForwardingUnit
+(
 
+	.reset(reset),
+	.EX_MEM_RegWrite(RegWrite_register_EX_MEM_in_wire),
+	.MEM_WB_RegWrite(RegWrite_register_MEM_WB_in_wire),
+	.Rs(Instruction_register_ID_EX_out_wire[25:21]),
+	.Rt(Instruction_register_ID_EX_out_wire[20:16]),
+	.EX_MEM_Rd(WriteRegister_register_MEM_WB_in_wire),
+	.MEM_WB_Rd(WriteRegister_wire),
+	.ForwardA(ForwardA_wire),
+	.ForwardB(ForwardB_wire)
+);
 
 endmodule
 
