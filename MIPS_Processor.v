@@ -303,7 +303,7 @@ Multiplexer2to1
 ForwardA_MUX_ReadData1_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM
 (
 	.Selector(ForwardA_wire[1]),
-	.MUX_Data0(MUX_Data1_or_MemoryOrAlu_wire),
+	.MUX_Data0(MUX_ReadData1_or_MemoryOrAlu_wire),
 	.MUX_Data1(ALUResult_register_MEM_WB_in_wire),
 	
 	.MUX_Output(MUX_ReadData1_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM_wire)
@@ -335,7 +335,7 @@ Multiplexer2to1
 ForwardB_MUX_ReadData2OrInmmediate_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM
 (
 	.Selector(ForwardB_wire[1]),
-	.MUX_Data0(MUX_Data1_or_MemoryOrAlu_wire),
+	.MUX_Data0(MUX_ReadData2OrInmmediate_or_MemoryOrAlu_wire),
 	.MUX_Data1(ALUResult_register_MEM_WB_in_wire),
 	
 	.MUX_Output(MUX_ReadData2OrInmmediate_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM_wire)
@@ -555,7 +555,7 @@ Register_EX_MEM
 	.reset(reset),
 	.Zero(Zero_register_EX_MEM_wire),
 	.ALU_result(ALUResult_register_EX_MEM_in_wire),
-	.Data_2(ReadData2_wire),
+	.Data_2(MUX_ReadData2OrInmmediate_or_MemoryOrAlu_MEM_WB_or_AluResult_EX_MEM_wire),
 	.Jump_address(Jump_address_register_EX_MEM_in_wire),
 	.Branch_adress(BranchAddress_register_EX_MEM_in_wire),
 	.WriteRegister(WriteRegister_register_EX_MEM_in_wire),
@@ -624,8 +624,8 @@ ForwardingUnit
 (
 
 	.reset(reset),
-	.EX_MEM_RegWrite(RegWrite_register_EX_MEM_in_wire),
-	.MEM_WB_RegWrite(RegWrite_register_MEM_WB_in_wire),
+	.EX_MEM_RegWrite(RegWrite_register_MEM_WB_in_wire),
+	.MEM_WB_RegWrite(RegWrite_wire),
 	.Rs(Instruction_register_ID_EX_out_wire[25:21]),
 	.Rt(Instruction_register_ID_EX_out_wire[20:16]),
 	.EX_MEM_Rd(WriteRegister_register_MEM_WB_in_wire),
