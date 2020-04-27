@@ -1,0 +1,35 @@
+/******************************************************************
+* Description
+*	This is the module that will be in charge of doing the forwarding of data when
+*	there is the need of requiring a register that still doesn't have the value in the register file
+* Version:
+*	1.0
+* Author:
+*	Alexis Muñoz
+* email:
+*	is713743@iteso.mx
+* Date:
+*	26/04/2020
+******************************************************************/
+
+module ForwardingUnit
+(
+	input clk,
+	input reset,
+	input [4:0] Rs,
+	input [4:0] Rt,
+	input [4:0] EX_MEM_Rd,
+	input [N-1:0] PC_4,
+	//Control
+	input MemtoReg,
+	input RegWrite,
+	
+	
+	output reg [N-1:0] ALU_result_out,
+	output reg [N-1:0] Read_data_out,
+	output reg [4:0] WriteRegister_out,
+	output reg [N-1:0] PC_4_out, 	
+	//Control
+	output reg MemtoReg_out,
+	output reg RegWrite_out
+);
