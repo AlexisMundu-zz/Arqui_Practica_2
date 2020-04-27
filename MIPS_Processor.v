@@ -141,6 +141,8 @@ wire [31:0] RA_address_wire;
 wire [1:0] ForwardA_wire;
 wire [1:0] ForwardB_wire;
 
+wire [31:0] MUX_Data1_or_MemoryOrAlu_wire;
+
 integer ALUStatus;
 
 
@@ -270,6 +272,20 @@ ArithmeticLogicUnitControl
 	.jr(JR_register_EX_MEM_in_wire)
 );
 
+
+Multiplexer2to1
+#(
+	.NBits(32)
+)
+MUX_ReadData1_or_MemoryOrAlu
+(
+	.Selector(ForwardA_wire[0]),
+	.MUX_Data0(ReadData1_wire),
+	.MUX_Data1(MemoryOrAlu_wire),
+	
+	.MUX_Output(MUX_Data1_or_MemoryOrAlu_wire)
+
+);
 
 
 ALU
