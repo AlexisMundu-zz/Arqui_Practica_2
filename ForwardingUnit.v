@@ -15,7 +15,6 @@
 module ForwardingUnit
 (
 
-	input reset,
 	input EX_MEM_RegWrite,
 	input MEM_WB_RegWrite,
 	input [4:0] Rs,
@@ -27,8 +26,8 @@ module ForwardingUnit
 	output [1:0] ForwardB
 );
 
-assign ForwardA = !reset ? 2'b00 : (EX_MEM_RegWrite & EX_MEM_Rd != 0 & EX_MEM_Rd == Rs ? 2'b10 : (MEM_WB_RegWrite & MEM_WB_Rd != 0 & MEM_WB_Rd == Rs? 2'b01 : 2'b00));
+assign ForwardA = EX_MEM_RegWrite & EX_MEM_Rd != 0 & EX_MEM_Rd == Rs ? 2'b10 : (MEM_WB_RegWrite & MEM_WB_Rd != 0 & MEM_WB_Rd == Rs? 2'b01 : 2'b00);
 
-assign ForwardB = !reset ? 2'b00 : (MEM_WB_RegWrite & MEM_WB_Rd != 0 & MEM_WB_Rd == Rt ? 2'b10 : (MEM_WB_RegWrite & MEM_WB_Rd != 0 & MEM_WB_Rd == Rt? 2'b01 : 2'b00));
+assign ForwardB = EX_MEM_RegWrite & EX_MEM_Rd != 0 & EX_MEM_Rd == Rt ? 2'b10 : (MEM_WB_RegWrite & MEM_WB_Rd != 0 & MEM_WB_Rd == Rt? 2'b01 : 2'b00);
 
 endmodule
