@@ -26,6 +26,7 @@ module Register_MEM_WB
 	//Control
 	input MemtoReg,
 	input RegWrite,
+	input jump,
 	
 	
 	output reg [N-1:0] ALU_result_out,
@@ -34,10 +35,11 @@ module Register_MEM_WB
 	output reg [N-1:0] PC_4_out, 	
 	//Control
 	output reg MemtoReg_out,
-	output reg RegWrite_out
+	output reg RegWrite_out,
+	output reg jump_out
 );
 
-always@(negedge reset or posedge clk) begin
+always@(negedge reset or negedge clk) begin
 	if(reset==0)
 		begin
 			ALU_result_out <= 0;

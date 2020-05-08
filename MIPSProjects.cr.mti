@@ -26,19 +26,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ALU
 
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/ForwardingUnit.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ForwardingUnit.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ForwardingUnit
-
-Top level modules:
-	ForwardingUnit
-
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/Register_MEM_WB.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/Register_MEM_WB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Register_MEM_WB
 
 Top level modules:
 	Register_MEM_WB
+
+} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/ForwardingUnit.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/ForwardingUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ForwardingUnit
+
+Top level modules:
+	ForwardingUnit
 
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor_TB.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor_TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -81,13 +81,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	Adder32bits
-
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/MIPS_Processor.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module MIPS_Processor
-
-Top level modules:
-	MIPS_Processor
 
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/SignExtend.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/SignExtend.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -141,18 +134,18 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Register_ID_EX
 
-} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/MUXRegisterFile.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/MUXRegisterFile.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module MUXRegisterFile
-
-Top level modules:
-	MUXRegisterFile
-
 } {} {}} C:/MIPSProjects/MIPSProcessor_ver1/Register_IF_ID.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/Register_IF_ID.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module Register_IF_ID
 
 Top level modules:
 	Register_IF_ID
+
+} {} {}} C:/MIPSProjects/MIPSProcessor_ver1/MUXRegisterFile.v {1 {vlog -work work -stats=none C:/MIPSProjects/MIPSProcessor_ver1/MUXRegisterFile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MUXRegisterFile
+
+Top level modules:
+	MUXRegisterFile
 
 } {} {}}

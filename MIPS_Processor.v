@@ -34,6 +34,7 @@ module MIPS_Processor
 wire Jump_wire;
 wire Jump_register_ID_EX_in_wire;
 wire Jump_register_EX_MEM_in_wire;
+wire Jump_register_MEM_WB_in_wire;
 
 wire BranchNE_wire;
 wire BranchNE_register_ID_EX_in_wire;
@@ -441,7 +442,7 @@ Multiplexer2to1
 )
 MUX_PC_4_OR_BEQ_OR_BNE_OR_Jump
 (
-	.Selector(Jump_wire),
+	.Selector(Jump_register_MEM_WB_in_wire),
 	.MUX_Data0(MUX_PC_4_OR_BEQ_OR_BNE_wire),
 	.MUX_Data1(Jump_address_wire), //PC_4_wire[31:28], Instruction_wire[25:0], 2'b00 ser+ía si tuvieramos muchas direcciones pero 
 																		 // como el MIPS no tiene muchas entonces solo le pasamos los primeros 4 nibbles
@@ -581,7 +582,7 @@ Register_EX_MEM
 	.WriteRegister_out(WriteRegister_register_MEM_WB_in_wire),
 	.PC_4_out(PC_4_register_MEM_WB_in_wire), 	
 	//Control
-	.Jump_out(Jump_wire),
+	.Jump_out(Jump_register_MEM_WB_in_wire),
 	.BranchEQ_out(BranchEQ_wire),
 	.BranchNE_out(BranchNE_wire),
 	.MemRead_out(MemRead_wire),
@@ -589,7 +590,7 @@ Register_EX_MEM
 	.MemtoReg_out(MemtoReg_register_MEM_WB_in_wire),
 	.RegWrite_out(RegWrite_register_MEM_WB_in_wire),
 	
-	.JR_out(JR_wire),
+	.JR_out(JR_register_MEM_WB_in_wire),
 	.RA_address_out(RA_address_wire)
 );
 
@@ -606,6 +607,7 @@ Register_MEM_WB
 	//Control
 	.MemtoReg(MemtoReg_register_MEM_WB_in_wire),
 	.RegWrite(RegWrite_register_MEM_WB_in_wire),
+	.jump(Jump_register_MEM_WB_in_wire),
 	
 	
 	.ALU_result_out(ALUResult_wire),
@@ -614,7 +616,8 @@ Register_MEM_WB
 	.PC_4_out(PC_4_register_MEM_WB_out_wire), 	
 	//Control
 	.MemtoReg_out(MemtoReg_wire),
-	.RegWrite_out(RegWrite_wire)
+	.RegWrite_out(RegWrite_wire),
+	.jump_out(Jump_wire)
 );
 
 /////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 Flow report for MIPS_Processor
-Wed May 06 20:49:20 2020
+Thu May 07 20:21:31 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed May 06 20:49:20 2020       ;
+; Flow Status                     ; Successful - Thu May 07 20:21:31 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; MIPS_Processor                              ;
 ; Top-level Entity Name           ; MIPS_Processor                              ;
@@ -48,7 +48,7 @@ refer to the applicable agreement for further details.
 ; Device                          ; 5CGXFC9E6F35C7                              ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1560                                        ;
+; Total registers                 ; 1412                                        ;
 ; Total pins                      ; 106                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 16,384                                      ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/06/2020 20:48:57 ;
+; Start date & time ; 05/07/2020 20:21:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MIPS_Processor      ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 168122005439498.158881613712700        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 168122005439498.158890087012332        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -95,8 +95,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 750 MB              ; 00:00:35                           ;
-; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:35                           ;
+; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 751 MB              ; 00:00:33                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

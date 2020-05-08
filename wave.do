@@ -34,10 +34,28 @@ add wave -noupdate /MIPS_Processor_TB/DUV/Memory/Address
 add wave -noupdate /MIPS_Processor_TB/DUV/Memory/MemWrite
 add wave -noupdate /MIPS_Processor_TB/DUV/Memory/MemRead
 add wave -noupdate /MIPS_Processor_TB/DUV/Memory/ReadData
+add wave -noupdate -divider {FORWARD UNIT}
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/EX_MEM_RegWrite
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/MEM_WB_RegWrite
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/Rs
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/Rt
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/EX_MEM_Rd
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/MEM_WB_Rd
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/ForwardA
+add wave -noupdate /MIPS_Processor_TB/DUV/ForwardingUnit/ForwardB
+add wave -noupdate /MIPS_Processor_TB/DUV/Register_File/Register_t0/clk
+add wave -noupdate /MIPS_Processor_TB/DUV/Register_File/Register_t0/reset
+add wave -noupdate /MIPS_Processor_TB/DUV/Register_File/Register_t0/enable
+add wave -noupdate /MIPS_Processor_TB/DUV/Register_File/Register_t0/DataInput
+add wave -noupdate /MIPS_Processor_TB/DUV/Register_File/Register_t0/DataOutput
+add wave -noupdate /MIPS_Processor_TB/DUV/MUX_MemoryOrAlu/Selector
+add wave -noupdate /MIPS_Processor_TB/DUV/MUX_MemoryOrAlu/MUX_Data0
+add wave -noupdate /MIPS_Processor_TB/DUV/MUX_MemoryOrAlu/MUX_Data1
+add wave -noupdate /MIPS_Processor_TB/DUV/MUX_MemoryOrAlu/MUX_Output
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {31 ps} 0}
+WaveRestoreCursors {{Cursor 1} {91 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 150
+configure wave -namecolwidth 176
 configure wave -valuecolwidth 107
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
@@ -51,4 +69,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {27 ps} {47 ps}
+WaveRestoreZoom {83 ps} {131 ps}
