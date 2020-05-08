@@ -1,5 +1,6 @@
 
 .text
+	add $zero, $zero, $zero
 	lui $t0, 0x00001001	# Memory start
 	lui $t1, 0x00001001	# Memory start
 	addi $t1, $t1, 72
